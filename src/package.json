@@ -1,0 +1,30 @@
+{
+  "name": "Orbita",
+  "version": "1.0.0",
+  "description": "My fine Nuxt.js project",
+  "author": "Eugene Che",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.21",
+    "nuxt": "^2.0.0",
+    "vue-lodash": "^2.1.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^3.4.2",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "uuid": "^8.3.2"
+  }
+}
