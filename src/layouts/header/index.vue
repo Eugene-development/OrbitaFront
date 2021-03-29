@@ -55,7 +55,7 @@
               <svg class="mx-2 animate-ping mr-1.5 h-2 w-2 text-blueGray-50" fill="currentColor" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="3"/>
               </svg>
-              {{lengthCart}}
+<!--              {{lengthCart}}-->
             </span>
           </div>
           </NuxtLink>
@@ -212,11 +212,11 @@ export default {
     MobileMenu
   },
 
-  computed: {
-    ...mapGetters({
-      lengthCart: 'catalog/cart/lengthCart',
-    }),
-  },
+  // computed: {
+  //   ...mapGetters({
+  //     lengthCart: 'catalog/cart/lengthCart',
+  //   }),
+  // },
 
   methods: {
     ...mapActions({
