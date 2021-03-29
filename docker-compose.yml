@@ -11,11 +11,12 @@ services:
       - "4000:4000"
     command:
       "npm run start"
+    network_mode: "host"
 
 
   nginx:
     image: nginx:1.13
-    container_name: orbita-nginx
+    container_name: orbita_nginx
     ports:
       - "80:80"
     volumes:
@@ -23,3 +24,4 @@ services:
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
       - nuxt
+    network_mode: "host"
