@@ -153,7 +153,7 @@ export const actions = {
 export const mutations = {
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
   CART: (state, data) => state.cart = data,
-  VISIBLE_CART: (state, visibleCart) => state.visibleCart = visibleCart,
+  // VISIBLE_CART: (state, visibleCart) => state.visibleCart = visibleCart,
   LENGTH_CART: (state, lengthCart) => state.lengthCart = lengthCart,
   TOTAL_SUM: (state, totalSum) => state.totalSum = totalSum,
 };
@@ -161,7 +161,7 @@ export const mutations = {
 export const getters = {
   pathAWS: state => state.pathAWS,
   cart: state => state.cart,
-  visibleCart: state => state.visibleCart,
+  // visibleCart: state => state.visibleCart,
   lengthCart: state => state.lengthCart,
   totalSum: state => state.totalSum,
 };

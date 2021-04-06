@@ -16,8 +16,8 @@ export const state = () => ({
 });
 
 export const actions = {
-  async fetch({commit, state}, payload) {
-    const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + payload.id, state.apiCRUD);
+  async getRubric({commit, state}, payload) {
+    const { data } = await this.$axios.$get('get-where-rubric-category-count-text/' + payload.id, state.apiCRUD);
     const rubricID = payload.id;
 
     commit('ALL_RUBRIC', data);
@@ -27,7 +27,10 @@ export const actions = {
   async getProducts({commit, state}, payload) {
 
     const { data } = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
-    // console.log(state.pathAWSBucket.path)
+
+    //здесь добавить булево значение к каждому товару???
+    console.log(data);
+
 
     const pathAWS = state.pathAWSBucket.path
     commit('PATH_AWS', pathAWS)
@@ -35,7 +38,6 @@ export const actions = {
     const slugCategory = payload.slug;
 
     forEach(data, function (value) {
-      //здесь добавить булево значение к каждому товару???
       const products = find(value.category, {'slug': slugCategory});
       commit('PRODUCTS', products);
     });

@@ -143,7 +143,7 @@ export default {
     return /^\d+$/.test(params.id);
   },
   async asyncData({store, params}) {
-    await store.dispatch('catalog/category/fetch', {
+    await store.dispatch('catalog/category/getRubric', {
       id: params.id
     })
   },
