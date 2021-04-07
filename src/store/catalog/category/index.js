@@ -29,7 +29,6 @@ export const actions = {
     const { data } = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
 
     //здесь добавить булево значение к каждому товару???
-    console.log(data);
 
 
     const pathAWS = state.pathAWSBucket.path

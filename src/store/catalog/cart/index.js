@@ -5,6 +5,8 @@ import {update} from 'lodash';
 import {parseInt} from 'lodash';
 import {cloneDeep} from 'lodash';
 import {remove} from 'lodash';
+import {concat} from 'lodash';
+import {some} from 'lodash';
 
 
 export const state = () => ({
@@ -14,6 +16,7 @@ export const state = () => ({
   cartProducts: [],
   lengthCart: '',
   totalSum: '',
+  productsInCart:[],
 
 
   apiCart: {
@@ -45,6 +48,14 @@ export const actions = {
 
   async sendToCart({commit, state}, payload) {
 
+    const itemsCart = await JSON.parse(localStorage.getItem('inCart'));
+    const newItemsCart = concat(itemsCart, payload)
+    localStorage.setItem('inCart', JSON.stringify(newItemsCart));
+    const productsInCart = JSON.parse(localStorage.getItem('inCart'));
+    commit('PRODUCTS_IN_CART', productsInCart);
+
+
+
     const payloadCart = {
       product_id: payload,
       sessionUser: localStorage.getItem('data')
@@ -52,13 +63,19 @@ export const actions = {
     const response = await this.$axios.$post('store-cart', payloadCart, state.apiCart);
 
 
+
+
+
+    const checkInCart = some(c, [252]);
+    console.log(checkInCart);
+
     //Изменить булево значение добавленное ранее на false
     // const visibleCart = false;
-    // commit('VISIBLE_CART', visibleCart);
 
   },
 
   async getCart({commit, state}) {
+
 
     const pathAWS = state.pathAWSBucket.path
     commit('PATH_AWS', pathAWS)
@@ -153,15 +170,15 @@ export const actions = {
 export const mutations = {
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
   CART: (state, data) => state.cart = data,
-  // VISIBLE_CART: (state, visibleCart) => state.visibleCart = visibleCart,
   LENGTH_CART: (state, lengthCart) => state.lengthCart = lengthCart,
   TOTAL_SUM: (state, totalSum) => state.totalSum = totalSum,
+  PRODUCTS_IN_CART: (state, productsInCart) => state.productsInCart = productsInCart,
 };
 
 export const getters = {
   pathAWS: state => state.pathAWS,
   cart: state => state.cart,
-  // visibleCart: state => state.visibleCart,
   lengthCart: state => state.lengthCart,
   totalSum: state => state.totalSum,
+  productsInCart: state => state.productsInCart,
 };
