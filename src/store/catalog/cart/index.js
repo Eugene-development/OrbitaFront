@@ -12,11 +12,13 @@ import {some} from 'lodash';
 export const state = () => ({
   cart: [],
   pathAWS: '',
-  visibleCart: true,
+  // visibleCart: true,
   cartProducts: [],
   lengthCart: '',
   totalSum: '',
   productsInCart:[],
+
+  ruleForm: {},
 
 
 
@@ -35,17 +37,57 @@ export const state = () => ({
 
 export const actions = {
 
-
-  //Возвращает ноль(((
-  // getLengthCart({commit, state}){
-
-  // const data = forEach(state.cart, function (value) {
-  // });
-
-// console.log(state.cart.length)
-
-  // commit('LENGTH_CART', data.length);
-  // },
+  updateRuleFormName ({commit, state}, e) {
+    console.log(e)
+    const ruleForm = {
+      name: e.data,
+      phone: state.ruleForm.phone,
+      email: state.ruleForm. email,
+      address: state.ruleForm.address,
+      comments: state.ruleForm.comments
+    };
+    commit('RULE_FORM', ruleForm)
+  },
+  updateRuleFormPhone ({commit, state}, e) {
+    const ruleForm = {
+      name: state.ruleForm.name,
+      phone: e.data,
+      email: state.ruleForm. email,
+      address: state.ruleForm.address,
+      comments: state.ruleForm.comments
+    };
+    commit('RULE_FORM', ruleForm)
+  },
+  updateRuleFormEmail ({commit, state}, e) {
+    const ruleForm = {
+      name: state.ruleForm.name,
+      phone: state.ruleForm.phone,
+      email: e.data,
+      address: state.ruleForm.address,
+      comments: state.ruleForm.comments
+    };
+    commit('RULE_FORM', ruleForm)
+  },
+  updateRuleFormAddress ({commit, state}, e) {
+    const ruleForm = {
+      name: state.ruleForm.name,
+      phone: state.ruleForm.phone,
+      email: state.ruleForm. email,
+      address: e.data,
+      comments: state.ruleForm.comments
+    };
+    commit('RULE_FORM', ruleForm)
+  },
+  updateRuleFormComments ({commit, state}, e) {
+    const ruleForm = {
+      name: state.ruleForm.name,
+      phone: state.ruleForm.phone,
+      email: state.ruleForm. email,
+      address: state.ruleForm.address,
+      comments: e.data
+    };
+    commit('RULE_FORM', ruleForm)
+  },
 
 
   async sendToCart({commit, state}, payload) {
@@ -59,24 +101,11 @@ export const actions = {
     const lengthCart = state.productsInCart.length - 1;
     commit('LENGTH_CART', lengthCart);
 
-
-
-
     const payloadCart = {
       product_id: payload,
       sessionUser: localStorage.getItem('data')
     };
     const response = await this.$axios.$post('store-cart', payloadCart, state.apiCart);
-
-
-
-
-
-    // const checkInCart = some(c, [252]);
-    // console.log(checkInCart);
-
-    //Изменить булево значение добавленное ранее на false
-    // const visibleCart = false;
 
   },
 
@@ -84,7 +113,6 @@ export const actions = {
   // },
 
   async getCart({commit, state}) {
-
 
     const pathAWS = state.pathAWSBucket.path
     commit('PATH_AWS', pathAWS)
@@ -160,13 +188,15 @@ export const actions = {
 
   async sendOrder({ state }){
     const data = {
-      products: state.cart
+      products: state.cart,
+      information: state.ruleForm
     }
    await this.$axios.$post('/sendOrder', data, state.apiMail);
   }
 };
 
 export const mutations = {
+  RULE_FORM: (state, ruleForm) => state.ruleForm = ruleForm,
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
   CART: (state, data) => state.cart = data,
   LENGTH_CART: (state, lengthCart) => state.lengthCart = lengthCart,
@@ -175,6 +205,7 @@ export const mutations = {
 };
 
 export const getters = {
+  ruleForm: state => state.ruleForm,
   pathAWS: state => state.pathAWS,
   cart: state => state.cart,
   lengthCart: state => state.lengthCart,

@@ -116,7 +116,7 @@
           </div>
           <div class="ml-3 flex-1 md:flex md:justify-between">
             <p class="text-sm  text-blue-700">
-              Корзина пуста
+<!--              Корзина пуста-->
             </p>
             <!--            <p class="mt-3 text-sm md:mt-0 md:ml-6">-->
             <!--              <a href="#" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">Назад <span aria-hidden="true">&rarr;</span></a>-->
@@ -163,37 +163,60 @@
             </p>
           </div>
           <div class="mt-5 md:mt-0 md:col-span-2">
-            <form action="#" method="POST">
+            <form ref="ruleForm" @submit.prevent="sendOrder" >
               <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 ">
                   <label class="block text-sm font-medium text-gray-700" for="first_name">Ваше имя</label>
-                  <input id="first_name" autocomplete="given-name" class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="first_name"
-                         type="text">
+                  <input
+                    @input="updateRuleFormName"
+                    id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="first_name"
+                    type="text">
                 </div>
 
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="phone">Телефон</label>
-                  <input id="phone" autocomplete="phone" class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="phone"
-                         type="text">
+                  <input
+                    @input="updateRuleFormPhone"
+                    id="phone"
+                    autocomplete="phone"
+                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    name="phone"
+                    type="text">
                 </div>
 
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="email">Почта (необязательно)</label>
-                  <input id="email" autocomplete="email" class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="email"
-                         type="email">
+                  <input
+                    @input="updateRuleFormEmail"
+                    id="email"
+                    autocomplete="email"
+                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    name="email"
+                    type="email">
                 </div>
-
 
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="street_address">Адрес доставки</label>
-                  <input id="street_address" autocomplete="street-address" class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="street_address"
-                         type="text">
+                  <input
+                    @input="updateRuleFormAddress"
+                    id="street_address"
+                    autocomplete="street-address"
+                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    name="street_address"
+                    type="text">
                 </div>
 
                 <div class="col-span-6">
-                  <label class="block text-sm font-medium text-gray-700" for="comment">Комментарий</label>
-                  <input id="comment" autocomplete="street-address" class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="street_address"
-                         type="text">
+                  <label class="block text-sm font-medium text-gray-700" for="comments">Комментарий</label>
+                  <input
+                    @input="updateRuleFormComments"
+                    id="comments"
+                    autocomplete="street-address"
+                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    name="comments"
+                    type="text">
                 </div>
 
               </div>
@@ -303,7 +326,12 @@ export default {
     ...mapActions({
       'setCurrentQuantityCart': 'catalog/cart/setCurrentQuantityCart',
       'deleteProductFromCart': 'catalog/cart/deleteProductFromCart',
-      'sendOrder': 'catalog/cart/sendOrder'
+      'sendOrder': 'catalog/cart/sendOrder',
+      'updateRuleFormName': 'catalog/cart/updateRuleFormName',
+      'updateRuleFormPhone': 'catalog/cart/updateRuleFormPhone',
+      'updateRuleFormEmail': 'catalog/cart/updateRuleFormEmail',
+      'updateRuleFormAddress': 'catalog/cart/updateRuleFormAddress',
+      'updateRuleFormComments': 'catalog/cart/updateRuleFormComments',
     })
   },
 
@@ -311,7 +339,8 @@ export default {
   computed: {
     ...mapGetters({
       cartList: 'catalog/cart/cart',
-      totalSum: 'catalog/cart/totalSum'
+      totalSum: 'catalog/cart/totalSum',
+      ruleForm: 'catalog/cart/ruleForm'
     }),
   },
 
