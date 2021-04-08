@@ -19,6 +19,8 @@ export const state = () => ({
   productsInCart:[],
 
 
+
+
   apiCart: {
     baseURL: process.env.API_CART
   },
@@ -54,6 +56,10 @@ export const actions = {
     const productsInCart = JSON.parse(localStorage.getItem('inCart'));
     commit('PRODUCTS_IN_CART', productsInCart);
 
+    const lengthCart = state.productsInCart.length - 1;
+    commit('LENGTH_CART', lengthCart);
+
+
 
 
     const payloadCart = {
@@ -66,13 +72,16 @@ export const actions = {
 
 
 
-    const checkInCart = some(c, [252]);
-    console.log(checkInCart);
+    // const checkInCart = some(c, [252]);
+    // console.log(checkInCart);
 
     //Изменить булево значение добавленное ранее на false
     // const visibleCart = false;
 
   },
+
+  // async getLengthCart({commit, state}){
+  // },
 
   async getCart({commit, state}) {
 
@@ -83,9 +92,6 @@ export const actions = {
     const data = await this.$axios.$get('/get-cart/' + localStorage.getItem('data'), state.apiCart);
     commit('CART', data);
 
-    const lengthCart = data.length
-    commit('LENGTH_CART', lengthCart);
-
     const cart = cloneDeep(state.cart); //Клонируем объект из стэйта, что бы не было ошибки изменения стэйта вне мутации
     const totalSum = cart.reduce((sum, product) => {
       let total = 0;
@@ -94,10 +100,8 @@ export const actions = {
     }, 0);
     commit('TOTAL_SUM', totalSum);
 
-
-
     /**
-     * TODO Отправил длину массива корзины, но работает только при нажатии на корзину.
+     * TODO Отправил длину массива корзины, но работает только при отправке в корзину.
      * TODO Нет асинхронности
      */
   },
@@ -138,14 +142,9 @@ export const actions = {
   },
 
   async deleteProductFromCart({commit, state}, id) {
-    // console.log(id);
-    // console.log(state.cart);
-
     const cart = cloneDeep(state.cart); //Клонируем объект из стэйта, что бы не было ошибки изменения стэйта вне мутации
 
-
     await remove(cart, item => item.id === id); // Удаляем элемент массива если совпадает условие сопадения id цикла и payload id
-    // console.log(cart);
     commit('CART', cart);
 
     const response = await this.$axios.$delete('delete-cart-one/' + id + '/' + localStorage.getItem('data'), state.apiCart);
@@ -157,13 +156,13 @@ export const actions = {
       return sum + total * product.quantity;
     }, 0);
     commit('TOTAL_SUM', totalSum); //TODO избыточност в трёх местах код
-
   },
 
   async sendOrder({ state }){
-
-   await this.$axios.$post('/sendOrder', state.cart, state.apiMail);
-
+    const data = {
+      products: state.cart
+    }
+   await this.$axios.$post('/sendOrder', data, state.apiMail);
   }
 };
 
