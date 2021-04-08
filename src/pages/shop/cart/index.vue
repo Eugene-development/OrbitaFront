@@ -87,7 +87,7 @@
                   <button
                     class="inline-flex items-center p-1.5 border border-transparent rounded-full shadow-sm text-white bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                     type="button"
-                    @click.prevent.once="deleteProductFromCart (item.id); getTotalSum()">
+                    @click.prevent.once="deleteProductFromCart (item.id)">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                          xmlns="http://www.w3.org/2000/svg">
                       <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -128,7 +128,7 @@
 
     <div class="m-8 text-right">
       <span v-if="totalSum > 0" class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
-       ИТОГО: {{ totalSum }} руб.
+       ИТОГО (с учётом скидки 5%): {{ totalSum.toFixed(2) }} руб.
 <!--        TODO по дефолту ноль стоит в корзине-->
       </span>
       <span v-else class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
@@ -163,11 +163,11 @@
             </p>
           </div>
           <div class="mt-5 md:mt-0 md:col-span-2">
-            <form ref="ruleForm" @submit.prevent="sendOrder" >
               <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 ">
                   <label class="block text-sm font-medium text-gray-700" for="first_name">Ваше имя</label>
                   <input
+                    :value="ruleForm.name"
                     @input="updateRuleFormName"
                     id="first_name"
                     autocomplete="given-name"
@@ -178,6 +178,7 @@
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="phone">Телефон</label>
                   <input
+                    :value="ruleForm.phone"
                     @input="updateRuleFormPhone"
                     id="phone"
                     autocomplete="phone"
@@ -189,6 +190,7 @@
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="email">Почта (необязательно)</label>
                   <input
+                    :value="ruleForm.email"
                     @input="updateRuleFormEmail"
                     id="email"
                     autocomplete="email"
@@ -200,6 +202,7 @@
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="street_address">Адрес доставки</label>
                   <input
+                    :value="ruleForm.address"
                     @input="updateRuleFormAddress"
                     id="street_address"
                     autocomplete="street-address"
@@ -211,6 +214,7 @@
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="comments">Комментарий</label>
                   <input
+                    :value="ruleForm.comments"
                     @input="updateRuleFormComments"
                     id="comments"
                     autocomplete="street-address"
@@ -220,7 +224,6 @@
                 </div>
 
               </div>
-            </form>
           </div>
         </div>
       </div>
@@ -299,16 +302,18 @@
       <!--      </div>-->
 
       <div class="flex justify-end">
-        <button class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
-                type="button">
-          Ожидайте подтверждения менеджера
-        </button>
-        <button
-          @click="sendOrder"
+        <button v-if="visibleSendOrder"
+          @click.once="sendOrder"
           class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
                 type="submit">
           Отправить менеджеру
         </button>
+        <button v-if="!visibleSendOrder"
+          class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
+                type="button">
+          Ожидайте подтверждения менеджера
+        </button>
+
       </div>
     </div>
 
@@ -321,7 +326,6 @@
 import {mapActions, mapGetters} from "vuex";
 
 export default {
-
   methods: {
     ...mapActions({
       'setCurrentQuantityCart': 'catalog/cart/setCurrentQuantityCart',
@@ -334,16 +338,13 @@ export default {
       'updateRuleFormComments': 'catalog/cart/updateRuleFormComments',
     })
   },
-
-
   computed: {
     ...mapGetters({
       cartList: 'catalog/cart/cart',
       totalSum: 'catalog/cart/totalSum',
-      ruleForm: 'catalog/cart/ruleForm'
+      ruleForm: 'catalog/cart/ruleForm',
+      visibleSendOrder: 'catalog/cart/visibleSendOrder'
     }),
   },
-
-
 }
 </script>

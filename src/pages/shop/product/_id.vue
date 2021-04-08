@@ -35,8 +35,13 @@
 
 
               <p v-show="visibleDescription" class="leading-relaxed mb-4" v-html="item.description"></p>
-              <p v-show="visiblePayment" class="leading-relaxed mb-4" >Про оплату</p>
-              <p v-show="visibleDelivery" class="leading-relaxed mb-4" >Про доставку</p>
+              <p v-show="visiblePayment" class="leading-relaxed mb-4">
+                Предлагаем следующие варианты оплаты: <br>
+                - наличными курьеру при получении товара;<br>
+                - картой через терминал, либо наличными в нашем офисе;<br>
+                - безналичный расчет (через банк для юридических лиц). Мы отправим счёт на оплату с нашими реквизитами на указанный вами электронный адрес. Доставка (самовывоз) товара осуществляется после получения денежных средств на наш расчётный счёт.</p>
+              <p v-show="visibleDelivery" class="leading-relaxed mb-4" >Для удобства мы предлагаем доставку товара на адрес объекта.
+                <br>Наша компания осуществляет доставку строительных и отделочных материалов как по Дзержинску, так и по Нижнему Новгороду и области. Стоимость доставки по Дзержинску составляет 350 рублей до 1500 кг, в Нижний Новгород от 1200 рублей. Более подробную информацию о стоимости за пределы города вы можете уточнить у менеджеров.</p>
 
 
               <NuxtLink v-for="(category, idx) of category" :key="category.id"
@@ -61,14 +66,15 @@
               <div class="flex">
                 <span class="title-font font-medium text-4xl text-gray-900">{{ item.price }} руб/{{ item.unit }}.</span>
                 <button
+                  v-if="!productsInCart.some(arrVal => item.id === arrVal)"
                   @click.prevent.once="sendToCart (item.id)"
                   class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
                   wfd-id="157">В корзину
                 </button>
-<!--                <button v-if="!visibleCart"-->
-<!--                  class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
-<!--                  wfd-id="157">Товар в корзине-->
-<!--                </button>-->
+                <button v-else
+                  class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
+                  wfd-id="157">Товар в корзине
+                </button>
                 <button
                   class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 hover:bg-red-900"
                   wfd-id="156">
@@ -113,7 +119,6 @@ export default {
     })
   },
 
-
   computed: {
     ...mapGetters({
       product: 'catalog/products/product',
@@ -122,8 +127,7 @@ export default {
       visibleDescription: 'catalog/products/visibleDescription',
       visiblePayment: 'catalog/products/visiblePayment',
       visibleDelivery: 'catalog/products/visibleDelivery',
-      visibleCart: 'catalog/cart/visibleCart',
-
+      productsInCart: 'catalog/cart/productsInCart',
     }),
   },
 }

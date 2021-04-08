@@ -1,28 +1,20 @@
 import {forEach} from 'lodash';
-import {find} from 'lodash';
-import {findKey} from 'lodash';
 import {update} from 'lodash';
 import {parseInt} from 'lodash';
 import {cloneDeep} from 'lodash';
 import {remove} from 'lodash';
 import {concat} from 'lodash';
-import {some} from 'lodash';
 
 
 export const state = () => ({
   cart: [],
   pathAWS: '',
-  // visibleCart: true,
   cartProducts: [],
   lengthCart: '',
   totalSum: '',
   productsInCart:[],
-
   ruleForm: {},
-
-
-
-
+  visibleSendOrder: true,
   apiCart: {
     baseURL: process.env.API_CART
   },
@@ -32,15 +24,13 @@ export const state = () => ({
   pathAWSBucket: {
     path: process.env.IMAGE
   },
-
 });
 
 export const actions = {
 
   updateRuleFormName ({commit, state}, e) {
-    console.log(e)
     const ruleForm = {
-      name: e.data,
+      name: e.target.value,
       phone: state.ruleForm.phone,
       email: state.ruleForm. email,
       address: state.ruleForm.address,
@@ -51,7 +41,7 @@ export const actions = {
   updateRuleFormPhone ({commit, state}, e) {
     const ruleForm = {
       name: state.ruleForm.name,
-      phone: e.data,
+      phone: e.target.value,
       email: state.ruleForm. email,
       address: state.ruleForm.address,
       comments: state.ruleForm.comments
@@ -62,7 +52,7 @@ export const actions = {
     const ruleForm = {
       name: state.ruleForm.name,
       phone: state.ruleForm.phone,
-      email: e.data,
+      email: e.target.value,
       address: state.ruleForm.address,
       comments: state.ruleForm.comments
     };
@@ -73,7 +63,7 @@ export const actions = {
       name: state.ruleForm.name,
       phone: state.ruleForm.phone,
       email: state.ruleForm. email,
-      address: e.data,
+      address: e.target.value,
       comments: state.ruleForm.comments
     };
     commit('RULE_FORM', ruleForm)
@@ -84,7 +74,7 @@ export const actions = {
       phone: state.ruleForm.phone,
       email: state.ruleForm. email,
       address: state.ruleForm.address,
-      comments: e.data
+      comments: e.target.value
     };
     commit('RULE_FORM', ruleForm)
   },
@@ -121,11 +111,12 @@ export const actions = {
     commit('CART', data);
 
     const cart = cloneDeep(state.cart); //Клонируем объект из стэйта, что бы не было ошибки изменения стэйта вне мутации
-    const totalSum = cart.reduce((sum, product) => {
+    const total = cart.reduce((sum, product) => {
       let total = 0;
       total = product.price
       return sum + total * product.quantity;
     }, 0);
+    const totalSum = total - total * 0.05;
     commit('TOTAL_SUM', totalSum);
 
     /**
@@ -161,11 +152,12 @@ export const actions = {
     });
     commit('CART', data);
 
-    const totalSum = cart.reduce((sum, product) => {
+    const total = cart.reduce((sum, product) => {
       let total = 0;
       total = product.price
       return sum + total * product.quantity;
     }, 0);
+    const totalSum = total - total * 0.05;
     commit('TOTAL_SUM', totalSum);
   },
 
@@ -178,17 +170,22 @@ export const actions = {
     const response = await this.$axios.$delete('delete-cart-one/' + id + '/' + localStorage.getItem('data'), state.apiCart);
     console.log(response);
 
-    const totalSum = cart.reduce((sum, product) => {
+    const total = cart.reduce((sum, product) => {
       let total = 0;
       total = product.price
       return sum + total * product.quantity;
     }, 0);
-    commit('TOTAL_SUM', totalSum); //TODO избыточност в трёх местах код
+    const totalSum = total - total * 0.05;
+    commit('TOTAL_SUM', totalSum); //TODO избыточность в трёх местах код
   },
 
-  async sendOrder({ state }){
+  async sendOrder({ state, commit }){
+    const visibleSendOrder = false;
+    commit('VISIBLE_SEND_ORDER', visibleSendOrder);
+
     const data = {
       products: state.cart,
+      totalSum: state.totalSum,
       information: state.ruleForm
     }
    await this.$axios.$post('/sendOrder', data, state.apiMail);
@@ -202,6 +199,7 @@ export const mutations = {
   LENGTH_CART: (state, lengthCart) => state.lengthCart = lengthCart,
   TOTAL_SUM: (state, totalSum) => state.totalSum = totalSum,
   PRODUCTS_IN_CART: (state, productsInCart) => state.productsInCart = productsInCart,
+  VISIBLE_SEND_ORDER: (state, visibleSendOrder) => state.visibleSendOrder = visibleSendOrder,
 };
 
 export const getters = {
@@ -211,4 +209,5 @@ export const getters = {
   lengthCart: state => state.lengthCart,
   totalSum: state => state.totalSum,
   productsInCart: state => state.productsInCart,
+  visibleSendOrder: state => state.visibleSendOrder,
 };

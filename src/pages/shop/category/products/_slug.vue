@@ -1,16 +1,16 @@
 <template>
-  <div class="bg-gray-50">
+  <div class="bg-blueGray-200">
     <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
       <div class="flex flex-col text-center w-full">
         <h1 class=" text-5xl font-medium title-font text-gray-900">{{ products.name }}</h1>
       </div>
     </div>
 
-    <div class="m-8">
+    <div class="p-8">
     <!--    <p>{{$route.params.slug}}</p>-->
     <!-- This example requires Tailwind CSS v2.0+ -->
     <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <li v-for="(product, idx) of products.product" :key="product.id" class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+      <li v-for="(product, idx) of products.product" :key="product.id" class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg divide-y divide-gray-200">
         <div class="flex-1 flex flex-col p-8">
           <img
             v-for="(image, idx) of product.image" :key="image.id"
@@ -57,7 +57,7 @@
                 <span class="ml-3">В корзину</span>
               </button>
               <button v-else
-                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-50 font-medium border border-transparent rounded-br-lg hover:text-gray-100 bg-red-800">
+                class="focus:outline-none relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-50 font-medium border border-transparent rounded-br-lg hover:text-gray-100 bg-indigo-900">
                 <!-- Heroicon name: solid/phone -->
                 <svg class="w-5 h-5 text-gray-50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -95,14 +95,6 @@ export default {
       }
     )
   },
-
-
-  data() {
-    return {
-      'bg-red-200': false,
-    }
-  },
-
 
   computed: {
     ...mapGetters({
