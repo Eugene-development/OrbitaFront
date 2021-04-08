@@ -116,7 +116,7 @@ export const actions = {
       total = product.price
       return sum + total * product.quantity;
     }, 0);
-    const totalSum = total - total * 0.05;
+    const totalSum = (total - total * 0.05).toFixed(2);
     commit('TOTAL_SUM', totalSum);
 
     /**
@@ -157,7 +157,7 @@ export const actions = {
       total = product.price
       return sum + total * product.quantity;
     }, 0);
-    const totalSum = total - total * 0.05;
+    const totalSum = (total - total * 0.05).toFixed(2);
     commit('TOTAL_SUM', totalSum);
   },
 
@@ -175,7 +175,7 @@ export const actions = {
       total = product.price
       return sum + total * product.quantity;
     }, 0);
-    const totalSum = total - total * 0.05;
+    const totalSum = (total - total * 0.05).toFixed(2);
     commit('TOTAL_SUM', totalSum); //TODO избыточность в трёх местах код
   },
 

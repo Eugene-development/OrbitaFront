@@ -128,7 +128,7 @@
 
     <div class="m-8 text-right">
       <span v-if="totalSum > 0" class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
-       ИТОГО (с учётом скидки 5%): {{ totalSum.toFixed(2) }} руб.
+       ИТОГО (с учётом скидки 5%): {{ totalSum }} руб.
 <!--        TODO по дефолту ноль стоит в корзине-->
       </span>
       <span v-else class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
