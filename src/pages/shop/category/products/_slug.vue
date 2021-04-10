@@ -68,7 +68,7 @@
           </div>
         </div>
       </li>
-
+{{seo}}
     </ul>
 
   </div>
@@ -89,9 +89,12 @@ export default {
     })
   },
 
+
+  // сдиспатч метод тоже
   methods:{
     ...mapActions({
-      'sendToCart':'catalog/cart/sendToCart'
+      'sendToCart':'catalog/cart/sendToCart',
+      'getSeo': 'catalog/category/getSeo'
       }
     )
   },
@@ -101,8 +104,34 @@ export default {
       products: 'catalog/category/products',
       pathAWS: 'catalog/category/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
+      seo: 'catalog/category/seo'
     }),
   },
+
+  data({store, params}) {
+    return {
+      title: 'test',
+      description: 'тест2 дескриптион2',
+      // slug: params.slug
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ]
+    }
+  },
+  mounted() {
+    this.getSeo('31');
+  },
+
+
 
 
 
@@ -125,9 +154,6 @@ export default {
   //   ...mapActions({
   //     'getBread': 'catalog/category/fetch2',
   //   })
-  // },
-  // mounted() {
-  //   this.getBread(1);
   // },
 
 

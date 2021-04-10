@@ -376,6 +376,28 @@ export default {
     Logo,
   },
 
+  data() {
+    return {
+      title: 'blablabla',
+      // breadcrumbs: 'test'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      // breadcrumbs: this.breadcrumbs,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'тест дескриптион'
+        }
+      ]
+
+    }
+  }
+
+
 
 
 }
