@@ -68,7 +68,7 @@
           </div>
         </div>
       </li>
-{{seo}}
+<!--{{seo.title}}-->
     </ul>
 
   </div>
@@ -87,6 +87,9 @@ export default {
     await store.dispatch('catalog/category/getProducts', {
       slug: params.slug
     })
+    await store.dispatch('catalog/category/getSeo', {
+      slug: params.slug
+    })
   },
 
 
@@ -94,7 +97,7 @@ export default {
   methods:{
     ...mapActions({
       'sendToCart':'catalog/cart/sendToCart',
-      'getSeo': 'catalog/category/getSeo'
+      // 'getSeo': 'catalog/category/getSeo'
       }
     )
   },
@@ -108,28 +111,30 @@ export default {
     }),
   },
 
-  data({store, params}) {
-    return {
-      title: 'test',
-      description: 'тест2 дескриптион2',
-      // slug: params.slug
-    }
-  },
+  // data({store, params}) {
+  //   return {
+  //     title: 'test',
+  //     description: 'тест2 дескриптион2',
+  //     // slug: params.slug
+  //   }
+  // },
   head() {
     return {
-      title: this.title,
+      title: this.seo.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.seo.description
         }
       ]
     }
   },
-  mounted() {
-    this.getSeo('31');
-  },
+
+  //Не подходит. Нужно суо с сервера уже получать
+  // mounted() {
+  //   this.getSeo('31');
+  // },
 
 
 

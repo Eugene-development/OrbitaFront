@@ -18,13 +18,24 @@ export const state = () => ({
 
 export const actions = {
   async getSeo({commit, state}, payload) {
-    console.log(payload);
-    const {data} = await this.$axios.$get('get-category-seo/' + payload, state.apiCRUD);
+    console.log(payload.slug);
+    const {data} = await this.$axios.$get('get-all-category-seo', state.apiCRUD);
+    const currentCategory = find(data, {'slug': payload.slug});
 
 
-    // console.log(data);
 
-      commit('SEO', data);
+
+
+
+
+
+    //Забрать все категории-По слагу выбрать айди нужной категории-снова отправить запрос на сео
+    // const {data} = await this.$axios.$get('get-category-seo/' + 31, state.apiCRUD);
+
+
+    // console.log(data[0].seo.title);
+
+      commit('SEO', currentCategory.seo);
 
   },
 
