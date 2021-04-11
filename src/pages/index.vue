@@ -378,24 +378,22 @@ export default {
 
   data() {
     return {
-      title: 'blablabla',
-      // breadcrumbs: 'test'
+      title: 'Орбита-строй || База строительных материалов в Дзержинске',
+      description: 'На сайте вы можете заказать строительные и отделочные материалы в Дзержинске с доставкой',
     }
   },
   head() {
     return {
       title: this.title,
-      // breadcrumbs: this.breadcrumbs,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'тест дескриптион'
+          content: this.description
         }
       ]
-
     }
-  }
+  },
 
 
 

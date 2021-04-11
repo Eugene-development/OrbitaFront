@@ -154,5 +154,25 @@ export default {
       allRubric: 'catalog/category/allRubric',
     }),
   },
+
+  data() {
+    return {
+      title: 'Орбита-строй || Каталог магазина строительных и отделочных материалов',
+      description: 'Большой каталог строительных и отделочныстроительныхх материалов компании Орбита-строй - интернет-магазине стройматериалов в Дзержинске',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ]
+    }
+  },
+
 }
 </script>

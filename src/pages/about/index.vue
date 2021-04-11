@@ -64,6 +64,23 @@
 
 <script>
 export default {
-  name: "index"
+  data() {
+    return {
+      title: 'Орбита-строй || О нашей компании - магазине строительных и отделочных материалов',
+      description: 'Информация о компании Орбита-строй - интернет-магазине стройматериалов в Дзержинске',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ]
+    }
+  },
 }
 </script>

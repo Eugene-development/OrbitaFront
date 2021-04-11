@@ -75,7 +75,24 @@
 
 <script>
 export default {
-name: "index"
+  data() {
+    return {
+      title: 'Орбита-строй || Акции в магазине строительных и отделочных материалов',
+      description: 'Акции на стройматериалы в интернет-магазине в Дзержинске. Распродажа отделочных материалов',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ]
+    }
+  },
 }
 </script>
 

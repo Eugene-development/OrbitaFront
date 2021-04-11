@@ -301,7 +301,24 @@
 
 <script>
 export default {
-  name: "index"
+  data() {
+    return {
+      title: 'Орбита-Строй || Контакты магазина и базы строительных и отделочных материалов в Дзержинске',
+      description: 'Контактная информация для связи с менеджерами Орбита-Строй - интернет-магазином стройматериалов в Дзержинске',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ]
+    }
+  },
 }
 </script>
 
