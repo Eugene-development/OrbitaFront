@@ -95,13 +95,6 @@
 <!--            </div>-->
 <!--          </div>-->
 
-
-
-
-
-
-
-
     <div class="my-24 pb-16 bg-indigo-50 lg:pb-0 lg:z-10 lg:relative">
 <!--    <div class="my-24 pb-16 bg-gradient-to-r from-white to-indigo-900 lg:pb-0 lg:z-10 lg:relative">-->
       <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
