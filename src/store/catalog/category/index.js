@@ -8,7 +8,7 @@ export const state = () => ({
   seo: [],
 
   pathAWSBucket: {
-    path: process.env.IMAGE
+    path: process.env.IMAGE_PRODUCTS
   },
   apiCRUD: {
     baseURL: process.env.API_CRUD
@@ -18,16 +18,9 @@ export const state = () => ({
 
 export const actions = {
   async getSeo({commit, state}, payload) {
-    console.log(payload.slug);
+    // console.log(payload.slug);
     const {data} = await this.$axios.$get('get-all-category-seo', state.apiCRUD);
     const currentCategory = find(data, {'slug': payload.slug});
-
-
-
-
-
-
-
 
     //Забрать все категории-По слагу выбрать айди нужной категории-снова отправить запрос на сео
     // const {data} = await this.$axios.$get('get-category-seo/' + 31, state.apiCRUD);

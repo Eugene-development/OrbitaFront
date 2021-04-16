@@ -10,7 +10,7 @@ export const state = () => ({
   visibleDelivery: false,
 
   pathAWSBucket: {
-    path: process.env.IMAGE
+    path: process.env.IMAGE_PRODUCTS
   },
 
   // apiCRUD: {baseURL: 'http://localhost:7788/'}
