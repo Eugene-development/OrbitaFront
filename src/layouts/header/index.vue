@@ -5,7 +5,7 @@
         <div class="max-w-xs my-4 hidden lg:block">
           <NuxtLink to="/">
             <span class="sr-only">База стройматериалов Орбита-Строй</span>
-            <img alt="logo" class="h-32" src="https://орбита-строй.рф/storage/img/logo.png">
+            <img alt="logo" class="h-32" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png">
           </NuxtLink>
 
 <!--          <span-->

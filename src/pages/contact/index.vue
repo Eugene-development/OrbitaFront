@@ -128,7 +128,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/CLYSLerEOhPlK8d56lxxUC21BQO7G1hezH64aGzp.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/CLYSLerEOhPlK8d56lxxUC21BQO7G1hezH64aGzp.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -153,7 +153,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/TVjWWC46pJSyUxDASwlklalaJFvHToaS0GFK9q0w.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/TVjWWC46pJSyUxDASwlklalaJFvHToaS0GFK9q0w.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -177,7 +177,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/ayYUHvQPuys6bOQkWYUfvfHUsdp5TxPmdsvw79qu.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/ayYUHvQPuys6bOQkWYUfvfHUsdp5TxPmdsvw79qu.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -193,7 +193,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/fANB4m5y0UU9DaBVNL7WNuPNAy4EwWQ8MA85e3s3.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/fANB4m5y0UU9DaBVNL7WNuPNAy4EwWQ8MA85e3s3.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -217,7 +217,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/W61UqT0Lv9dDmE245qQlnR3AstIWeZ7YPdTs9Izd.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/W61UqT0Lv9dDmE245qQlnR3AstIWeZ7YPdTs9Izd.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -233,7 +233,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/eBevfO73mE3VyzWv55l3QJ8aUB02brX50HiA6EE7.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/eBevfO73mE3VyzWv55l3QJ8aUB02brX50HiA6EE7.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -248,7 +248,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/sxCcH7B4ptttgnTmCGxUq0WLyMS59OxIh169wWfn.jpeg" alt="Kozhevnikova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/sxCcH7B4ptttgnTmCGxUq0WLyMS59OxIh169wWfn.jpeg" alt="Kozhevnikova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -263,7 +263,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/rztH2xohC4D7bfXEHO6xcAMZzRKmioJpv4bb1TWa.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/rztH2xohC4D7bfXEHO6xcAMZzRKmioJpv4bb1TWa.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
@@ -278,7 +278,7 @@
           <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-48 w-40 rounded-2xl xl:w-56 xl:h-64"
-                   src="https://орбита-строй.рф/storage/img/team/98KwwYMl3isz0Qenlkx5jWUJfqrtXqQkafynBxXq.jpeg" alt="Popova"
+                   src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/team/98KwwYMl3isz0Qenlkx5jWUJfqrtXqQkafynBxXq.jpeg" alt="Popova"
               >
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="font-medium text-lg leading-6 space-y-1">
