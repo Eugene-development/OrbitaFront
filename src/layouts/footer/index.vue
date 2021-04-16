@@ -3,19 +3,19 @@
   <div class="w-screen  py-20 bg-gray-100">
     <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
       <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-        <img class="h-22" src="https://орбита-строй.рф/storage/img/brand/1.png" alt="Tuple">
+        <img class="h-22" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/brands/1.png" alt="Tuple">
       </div>
       <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-        <img class="h-22" src="https://орбита-строй.рф/storage/img/brand/2.png" alt="Mirage">
+        <img class="h-22" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/brands/2.png" alt="Mirage">
       </div>
       <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-        <img class="h-22" src="https://орбита-строй.рф/storage/img/brand/3.png" alt="StaticKit">
+        <img class="h-22" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/brands/3.png" alt="StaticKit">
       </div>
       <div class="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-        <img class="h-22" src="https://орбита-строй.рф/storage/img/brand/4.png" alt="Transistor">
+        <img class="h-22" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/brands/4.png" alt="Transistor">
       </div>
       <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-        <img class="h-22" src="https://орбита-строй.рф/storage/img/brand/5.png" alt="Workcation">
+        <img class="h-22" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/brands/5.png" alt="Workcation">
       </div>
     </div>
   </div>
