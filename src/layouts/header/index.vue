@@ -22,7 +22,7 @@
 
         </div>
         <div class="max-w-5xl mr-8 justify-items-center object-center items-center  ">
-          <p class="font-extrasolar text-red-800  md:text-6xl sm:text-5xl border-b-1 flex">
+          <p class="font-extrasolar text-red-700  md:text-6xl sm:text-5xl border-b-1 flex">
             <svg class="mt-2 mr-2 w-12 h-12 hidden lg:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                  xmlns="http://www.w3.org/2000/svg">
               <path
@@ -41,7 +41,7 @@
             @click.native="cart()"
             to="/shop/cart">
           <div>
-            <svg class="w-24 h-24 text-red-800 text-right " fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            <svg class="w-24 h-24 text-red-700 text-right " fill="none" stroke="currentColor" viewBox="0 0 24 24"
                  xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
@@ -49,7 +49,7 @@
                 stroke-width="2"></path>
             </svg>
             <!-- This example requires Tailwind CSS v2.0+ -->
-            <span class="w-full inline-flex items-center justify-center p-1 rounded text-xs font-medium bg-red-800 text-gray-50">
+            <span class="w-full inline-flex items-center justify-center p-1 rounded text-xs font-medium bg-red-700 text-gray-50">
                           Корзина
 
               <svg class="mx-2 animate-ping mr-1.5 h-2 w-2 text-blueGray-50" fill="currentColor" viewBox="0 0 8 8">
@@ -79,10 +79,10 @@
               </svg>
             </button>
           </div>
-          <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+          <div class="hidden md:flex-1 md:flex md:items-center justify-center">
             <nav class="ml-3 flex space-x-10">
               <NuxtLink
-                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/"
                 @click.native="close_visible"
               >
@@ -92,7 +92,7 @@
               <div class="relative">
                 <!-- Item active: "text-gray-900", Item inactive: "text-gray-100" -->
                 <button
-                  class="group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                  class="mt-2 group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                   type="button"
                   @click="change_visibleCatalog">
                   <span>Каталог</span>
@@ -110,7 +110,7 @@
                 </button>
               </div>
               <NuxtLink
-                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/actions"
                 @click.native="close_visible"
               >
@@ -124,7 +124,7 @@
 <!--                Блог-->
 <!--              </NuxtLink>-->
               <NuxtLink
-                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/about"
                 @click.native="close_visible"
               >
@@ -133,7 +133,7 @@
               <div class="relative">
                 <!-- Item active: "text-gray-900", Item inactive: "text-gray-100" -->
                 <button
-                  class="group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                  class="mt-2 group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                   type="button"
                   @click="change_visibleInformation">
                   <span>Информация</span>
@@ -151,14 +151,14 @@
                 </button>
               </div>
               <NuxtLink
-                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/contact"
                 @click.native="close_visible"
               >
                 Контакты
               </NuxtLink>
               <a
-                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 href="https://vk.com/orbita_stroy"
                 target="_blank">
                 Наш VK
