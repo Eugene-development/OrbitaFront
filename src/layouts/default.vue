@@ -19,7 +19,6 @@ export default {
     Footer
   },
 
-
   methods: {
     ...mapActions({
       'useLocalStorage': 'user/useLocalStorage',
@@ -28,10 +27,5 @@ export default {
   mounted() {
     this.useLocalStorage();
   },
-
-
-
 }
-
-
 </script>

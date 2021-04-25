@@ -91,6 +91,9 @@ export const actions = {
     const lengthCart = state.productsInCart.length - 1;
     commit('LENGTH_CART', lengthCart);
 
+    const visibleSendOrder = true;
+    commit('VISIBLE_SEND_ORDER', visibleSendOrder);
+
     const payloadCart = {
       product_id: payload,
       sessionUser: localStorage.getItem('data')
@@ -168,7 +171,7 @@ export const actions = {
     commit('CART', cart);
 
     const response = await this.$axios.$delete('delete-cart-one/' + id + '/' + localStorage.getItem('data'), state.apiCart);
-    console.log(response);
+    // console.log(response);
 
     const total = cart.reduce((sum, product) => {
       let total = 0;
@@ -182,6 +185,18 @@ export const actions = {
   async sendOrder({ state, commit }){
     const visibleSendOrder = false;
     commit('VISIBLE_SEND_ORDER', visibleSendOrder);
+
+    localStorage.removeItem('inCart');
+    // const productsInCart = JSON.parse(localStorage.getItem('inCart'));
+    const lengthCart = 0;
+    commit('LENGTH_CART', lengthCart);
+
+
+    //Удаляем все значения из бд по значению 'data' при отправке заказа на почту
+    const response = await this.$axios.$delete('delete-cart-all/' + localStorage.getItem('data'), state.apiCart);
+
+
+
 
     const data = {
       products: state.cart,
