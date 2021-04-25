@@ -59,10 +59,8 @@
                 <td class="px-6 py-4 whitespace-nowrap">
 
                   <div>
-                    <label class="block text-sm font-medium text-gray-700" for="count"></label>
                     <div class="mt-1">
                       <input
-                        id="count"
                         :title="`${item.id}`"
                         :value="`${item.quantity}`"
                         class="shadow-sm focus:ring-red-800 focus:border-red-800 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -167,6 +165,8 @@
                 <div class="col-span-6 ">
                   <label class="block text-sm font-medium text-gray-700" for="first_name">Ваше имя</label>
                   <input
+                    :class="{'bg-red-100': alertDanger.name}"
+                    :placeholder="[placeholder.name]"
                     :value="ruleForm.name"
                     @input="updateRuleFormName"
                     id="first_name"
@@ -178,6 +178,8 @@
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="phone">Телефон</label>
                   <input
+                    :class="{'bg-red-100': alertDanger.phone}"
+                    :placeholder="[placeholder.phone]"
                     :value="ruleForm.phone"
                     @input="updateRuleFormPhone"
                     id="phone"
@@ -187,21 +189,23 @@
                     type="text">
                 </div>
 
-                <div class="col-span-6">
-                  <label class="block text-sm font-medium text-gray-700" for="email">Почта (необязательно)</label>
-                  <input
-                    :value="ruleForm.email"
-                    @input="updateRuleFormEmail"
-                    id="email"
-                    autocomplete="email"
-                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                    name="email"
-                    type="email">
-                </div>
+<!--                <div class="col-span-6">-->
+<!--                  <label class="block text-sm font-medium text-gray-700" for="email">Почта (необязательно)</label>-->
+<!--                  <input-->
+<!--                    :value="ruleForm.email"-->
+<!--                    @input="updateRuleFormEmail"-->
+<!--                    id="email"-->
+<!--                    autocomplete="email"-->
+<!--                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"-->
+<!--                    name="email"-->
+<!--                    type="email">-->
+<!--                </div>-->
 
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="street_address">Адрес доставки</label>
                   <input
+                    :class="{'bg-red-100': alertDanger.address}"
+                    :placeholder="[placeholder.address]"
                     :value="ruleForm.address"
                     @input="updateRuleFormAddress"
                     id="street_address"
@@ -214,6 +218,8 @@
                 <div class="col-span-6">
                   <label class="block text-sm font-medium text-gray-700" for="comments">Комментарий</label>
                   <input
+                    :class="{'bg-red-100': alertDanger.comments}"
+                    :placeholder="[placeholder.comments]"
                     :value="ruleForm.comments"
                     @input="updateRuleFormComments"
                     id="comments"
@@ -303,7 +309,7 @@
 
       <div class="flex justify-end">
         <button v-if="visibleSendOrder"
-          @click.once="sendOrder"
+          @click="sendOrder"
           class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
                 type="submit">
           Отправить менеджеру
@@ -340,9 +346,11 @@ export default {
   },
   computed: {
     ...mapGetters({
+      ruleForm: 'catalog/cart/ruleForm',
+      alertDanger: 'catalog/cart/alertDanger',
+      placeholder: 'catalog/cart/placeholder',
       cartList: 'catalog/cart/cart',
       totalSum: 'catalog/cart/totalSum',
-      ruleForm: 'catalog/cart/ruleForm',
       visibleSendOrder: 'catalog/cart/visibleSendOrder'
     }),
   },

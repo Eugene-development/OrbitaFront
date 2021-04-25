@@ -75,7 +75,7 @@
                           stroke-width="2"/>
                   </svg>
                   <span class="ml-3">
-                     Счётчик
+                     Подробнее
                 </span>
                 </NuxtLink>
               </div>

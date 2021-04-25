@@ -7,14 +7,18 @@ import {concat} from 'lodash';
 
 
 export const state = () => ({
+  ruleForm: {},
+  alertDanger: {},
+  placeholder: {},
+
   cart: [],
   pathAWS: '',
   cartProducts: [],
   lengthCart: '',
   totalSum: '',
   productsInCart:[],
-  ruleForm: {},
   visibleSendOrder: true,
+
   apiCart: {
     baseURL: process.env.API_CART
   },
@@ -24,6 +28,7 @@ export const state = () => ({
   pathAWSBucket: {
     path: process.env.IMAGE
   },
+
 });
 
 export const actions = {
@@ -86,7 +91,7 @@ export const actions = {
     const newItemsCart = concat(itemsCart, payload)
     localStorage.setItem('inCart', JSON.stringify(newItemsCart));
     const productsInCart = JSON.parse(localStorage.getItem('inCart'));
-    commit('PRODUCTS_IN_CART', productsInCart);
+    commit('PRODUCTS_IN_CART', productsInCart); //А нужна эта строка?
 
     const lengthCart = state.productsInCart.length - 1;
     commit('LENGTH_CART', lengthCart);
@@ -165,13 +170,23 @@ export const actions = {
   },
 
   async deleteProductFromCart({commit, state}, id) {
-    const cart = cloneDeep(state.cart); //Клонируем объект из стэйта, что бы не было ошибки изменения стэйта вне мутации
 
-    await remove(cart, item => item.id === id); // Удаляем элемент массива если совпадает условие сопадения id цикла и payload id
+    //Клонируем объект из стэйта, что бы не было ошибки изменения стэйта вне мутации
+    const cart = cloneDeep(state.cart);
+
+    // Удаляем элемент массива если совпадает условие сопадения id цикла и payload id
+    await remove(cart, item => item.id === id);
     commit('CART', cart);
 
     const response = await this.$axios.$delete('delete-cart-one/' + id + '/' + localStorage.getItem('data'), state.apiCart);
     // console.log(response);
+
+
+
+
+
+    //Получаем колво элементов в корзине после удаления однного элемента
+    commit('LENGTH_CART', cart.length); //TODO получить не из бд, а по колву элементов в LS
 
     const total = cart.reduce((sum, product) => {
       let total = 0;
@@ -183,33 +198,92 @@ export const actions = {
   },
 
   async sendOrder({ state, commit }){
-    const visibleSendOrder = false;
-    commit('VISIBLE_SEND_ORDER', visibleSendOrder);
-
-    localStorage.removeItem('inCart');
 
 
-    //Удаляем все значения из бд по значению 'data' при отправке заказа на почту
-    const response = await this.$axios.$delete('delete-cart-all/' + localStorage.getItem('data'), state.apiCart);
-
-
-    //Обнуляем количество элементов корзины
-    commit('LENGTH_CART', 0);
-    //Удаляем список товаров из представления корзины
-    commit('CART', []);
-    //Обнуляем общую сумму корзины
-    commit('TOTAL_SUM', 0);
-
-
-
-
-
-    const data = {
-      products: state.cart,
-      totalSum: state.totalSum,
-      information: state.ruleForm
+    if (!state.ruleForm.name) {
+      const alertDanger = {
+        name: true,
+        phone: state.alertDanger.phone,
+        address: state.alertDanger.address,
+        comments: state.alertDanger.comments,
+      };
+      commit('ALERT_DANGER', alertDanger)
     }
-   await this.$axios.$post('/sendOrder', data, state.apiMail);
+    if (!state.ruleForm.phone) {
+      const alertDanger = {
+        name: state.alertDanger.name,
+        phone: true,
+        address: state.alertDanger.address,
+        comments: state.alertDanger.comments,
+      };
+      commit('ALERT_DANGER', alertDanger)
+    }
+    if (!state.ruleForm.address) {
+      const alertDanger = {
+        name: state.alertDanger.name,
+        phone: state.alertDanger.phone,
+        address: true,
+        comments: state.alertDanger.comments,
+      };
+      commit('ALERT_DANGER', alertDanger)
+    }
+    if (!state.ruleForm.comments) {
+      const alertDanger = {
+        name: state.alertDanger.name,
+        phone: state.alertDanger.phone,
+        address: state.alertDanger.address,
+        comments: true,
+      };
+      commit('ALERT_DANGER', alertDanger)
+    }
+    // Валидация полей формы placeholder
+    const placeholder = {
+      name: 'Введите имя',
+      phone: 'Введите телефон',
+      address: 'Введите адрес доставки',
+      comments: 'Введите комментарий'
+    };
+    commit('PLACEHOLDER', placeholder)
+
+
+    // console.log(state.ruleForm.name);
+    // console.log(state.ruleForm.phone);
+    // console.log(state.ruleForm.address);
+    // console.log(state.ruleForm.comments);
+
+
+
+    if (state.ruleForm.name && state.ruleForm.phone && state.ruleForm.address && state.ruleForm.comments) {
+      const visibleSendOrder = false;
+      commit('VISIBLE_SEND_ORDER', visibleSendOrder);
+
+      const data = {
+        products: state.cart,
+        totalSum: state.totalSum,
+        information: state.ruleForm
+      }
+
+      await this.$axios.$post('/sendOrder', data, state.apiMail);
+
+
+      //Удаляем все значения из бд по значению 'data' при отправке заказа на почту
+      const response = await this.$axios.$delete('delete-cart-all/' + localStorage.getItem('data'), state.apiCart);
+
+      //Удаляем все значения inCart из localStorage
+      await localStorage.removeItem('inCart');
+
+
+      //Обнуляем количество элементов корзины
+      commit('LENGTH_CART', '');
+      //Удаляем список товаров из представления корзины
+      commit('CART', []);
+      //Обнуляем общую сумму корзины
+      commit('TOTAL_SUM', '');
+
+
+
+    }
+
   }
 };
 
@@ -221,6 +295,8 @@ export const mutations = {
   TOTAL_SUM: (state, totalSum) => state.totalSum = totalSum,
   PRODUCTS_IN_CART: (state, productsInCart) => state.productsInCart = productsInCart,
   VISIBLE_SEND_ORDER: (state, visibleSendOrder) => state.visibleSendOrder = visibleSendOrder,
+  ALERT_DANGER: (state, alertDanger) => state.alertDanger = alertDanger,
+  PLACEHOLDER: (state, placeholder) => state.placeholder = placeholder
 };
 
 export const getters = {
@@ -231,4 +307,6 @@ export const getters = {
   totalSum: state => state.totalSum,
   productsInCart: state => state.productsInCart,
   visibleSendOrder: state => state.visibleSendOrder,
+  alertDanger: state => state.alertDanger,
+  placeholder: state => state.placeholder
 };
