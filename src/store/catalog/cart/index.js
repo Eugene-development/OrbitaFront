@@ -187,13 +187,19 @@ export const actions = {
     commit('VISIBLE_SEND_ORDER', visibleSendOrder);
 
     localStorage.removeItem('inCart');
-    // const productsInCart = JSON.parse(localStorage.getItem('inCart'));
-    const lengthCart = 0;
-    commit('LENGTH_CART', lengthCart);
 
 
     //Удаляем все значения из бд по значению 'data' при отправке заказа на почту
     const response = await this.$axios.$delete('delete-cart-all/' + localStorage.getItem('data'), state.apiCart);
+
+
+    //Обнуляем количество элементов корзины
+    commit('LENGTH_CART', 0);
+    //Удаляем список товаров из представления корзины
+    commit('CART', []);
+    //Обнуляем общую сумму корзины
+    commit('TOTAL_SUM', 0);
+
 
 
 
