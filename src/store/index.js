@@ -1,4 +1,5 @@
 export const state = () => ({
+  token: '12300000000000003'
 });
 
 export const mutations = {

@@ -95,8 +95,6 @@
 import {mapActions, mapGetters} from "vuex";
 
 export default {
-
-
   async asyncData({store, params}) {
     await store.dispatch('catalog/category/getProducts', {
       slug: params.slug
@@ -106,12 +104,10 @@ export default {
     })
   },
 
-
-  // сдиспатч метод тоже
   methods: {
     ...mapActions({
         'sendToCart': 'catalog/cart/sendToCart',
-        // 'getSeo': 'catalog/category/getSeo'
+        'getSeo': 'catalog/category/getSeo'
       }
     )
   },
@@ -121,34 +117,22 @@ export default {
       products: 'catalog/category/products',
       pathAWS: 'catalog/category/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
-      // seo: 'catalog/category/seo'
+      seo: 'catalog/category/seo'
     }),
   },
 
-  // data({store, params}) {
-  //   return {
-  //     title: 'test',
-  //     description: 'тест2 дескриптион2',
-  //     // slug: params.slug
-  //   }
-  // },
-
-
-
-
-
-  // head() {
-  //   return {
-  //     title: this.seo.title,
-  //     meta: [
-  //       {
-  //         hid: 'description',
-  //         name: 'description',
-  //         content: this.seo.description
-  //       }
-  //     ]
-  //   }
-  // },
+  head() {
+    return {
+      title: this.seo.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.seo.description
+        }
+      ]
+    }
+  },
 
 
 
