@@ -4,7 +4,7 @@ export default {
   mode: 'universal',
   server: {
     port: 4000,
-    // host: '0.0.0.0'
+    host: '0.0.0.0'
   },
   /*
   ** Headers of the page
@@ -48,6 +48,19 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    ['@nuxtjs/google-analytics', {
+      id: ''
+    }],
+    ['@nuxtjs/yandex-metrika', {
+      id: '59608552',
+      webvisor: true,
+      clickmap:true,
+      useCDN:false,
+      trackLinks:true,
+      accurateTrackBounce:true,
+    }
+    ],
+
   ],
   /*
   ** Axios module configuration
