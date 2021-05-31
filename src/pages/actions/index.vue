@@ -30,7 +30,7 @@
 
         <div class="relative lg:flex lg:items-center">
           <div class="hidden lg:block lg:flex-shrink-0">
-            <img class="h-64 w-64 object-contain rounded-b xl:h-80 xl:w-80" src="https://орбита-строй.рф/storage/img/products/68.jpg" alt="">
+            <img class="h-64 w-64 object-contain rounded-b xl:h-80 xl:w-80" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/images/68.jpg" alt="">
           </div>
 
           <div class="relative lg:ml-10">
@@ -40,10 +40,9 @@
             <blockquote class="relative">
               <div class="text-2xl leading-9 font-medium text-gray-900">
                 <p>
-                  Смесь для пола Церезит CN 68
-                  Цена - 560 рублей. <br>
-                  Акция длится до конца апреля.
-                  *дополнительные скидки на данный вид продукции не распространяется
+                  Смесь для пола Церезит CN 68<br>
+                  Цена - 595 рублей (+5% скидка при заказе через сайт) <br>
+                  Акция длится до конца июня.
                 </p>
               </div>
               <footer class="mt-8">
@@ -52,14 +51,51 @@
                     <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                   </div>
 
-                  <button type="button" class="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                  <NuxtLink to="/shop/product/469" class="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                    <!-- Heroicon name: solid/mail -->
+                    <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                    Подробнее
+                  </NuxtLink>
+
+
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+        <div class="relative lg:flex lg:items-center">
+          <div class="hidden lg:block lg:flex-shrink-0">
+            <img class="h-64 w-64 object-contain rounded-b xl:h-80 xl:w-80" src="https://cdn1.ozone.ru/multimedia/wc1200/1018432467.jpg" alt="">
+          </div>
+
+          <div class="relative lg:ml-10">
+            <svg class="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-indigo-200 opacity-50" stroke="currentColor" fill="none" viewBox="0 0 144 144" aria-hidden="true">
+              <path stroke-width="2" d="M41.485 15C17.753 31.753 1 59.208 1 89.455c0 24.664 14.891 39.09 32.109 39.09 16.287 0 28.386-13.03 28.386-28.387 0-15.356-10.703-26.524-24.663-26.524-2.792 0-6.515.465-7.446.93 2.327-15.821 17.218-34.435 32.11-43.742L41.485 15zm80.04 0c-23.268 16.753-40.02 44.208-40.02 74.455 0 24.664 14.891 39.09 32.109 39.09 15.822 0 28.386-13.03 28.386-28.387 0-15.356-11.168-26.524-25.129-26.524-2.792 0-6.049.465-6.98.93 2.327-15.821 16.753-34.435 31.644-43.742L121.525 15z" />
+            </svg>
+            <blockquote class="relative">
+              <div class="text-2xl leading-9 font-medium text-gray-900">
+                Полуматовая декоровно-защитная пропитка для древесины.<br>
+                Страна производитель - Сербия. <br>
+                Цена за наличный платёж за 10л - 3300 рублей<br>
+                /количество ограничено/
+              </div>
+              <footer class="mt-8">
+                <div class="flex">
+                  <div class="flex-shrink-0 lg:hidden">
+                    <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  </div>
+
+                  <NuxtLink to="" class="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                     <!-- Heroicon name: solid/mail -->
                     <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2"></path>
                     </svg>
                     Купить
-                  </button>
+                  </NuxtLink>
 
 
                 </div>
