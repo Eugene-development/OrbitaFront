@@ -19,6 +19,9 @@ export const state = () => ({
 export const actions = {
   async getSeo({commit, state}, payload) {
     // console.log(payload.slug);
+
+    await this.$axios.setToken('1', 'Bearer')
+
     const {data} = await this.$axios.$get('get-all-category-seo', state.apiCRUD);
     const currentCategory = find(data, {'slug': payload.slug});
 
@@ -33,6 +36,11 @@ export const actions = {
   },
 
   async getRubric({commit, state}, payload) {
+
+    await this.$axios.setToken('1', 'Bearer')
+    // this.$axios.setHeader('Authorization', '1');
+    // this.$axios.setToken('1');
+
     const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + payload.id, state.apiCRUD);
     const rubricID = payload.id;
 
@@ -43,7 +51,13 @@ export const actions = {
   async getProducts({commit, state}, payload) {
     const pathAWS = state.pathAWSBucket.path
     commit('PATH_AWS', pathAWS)
-    //Слабое место. Баг при перезагрузке
+    //TODO Слабое место. Баг при перезагрузке
+
+
+
+
+    await this.$axios.setToken('1', 'Bearer')
+
 
 
     const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);

@@ -1,5 +1,5 @@
 export default function ({ $axios, store }) {
   $axios.onRequest((config) => {
-    $axios.setToken('DB5', 'Bearer')
+    $axios.setToken(process.env.TOKEN, 'Bearer')
   })
 }

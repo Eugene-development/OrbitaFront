@@ -36,10 +36,14 @@ export const actions = {
     commit('PATH_AWS', pathAWS)
 
     const id = payload.id;
-    // await this.$axios.setToken('123000000000002', 'Bearer')
+
+
+
+    await this.$axios.setToken('1', 'Bearer')
+    // this.$axios.setHeader('Authorization', '1');
+    // this.$axios.setToken('1');
+
     const { data } = await this.$axios.$get('get-one-product/' + id, state.apiCRUD);
-    // this.$axios.setHeader('Authorization', '12345');
-    // this.$axios.setToken('123777888');
     commit('PRODUCT', data);
 
 

@@ -99,15 +99,15 @@ export default {
     await store.dispatch('catalog/category/getProducts', {
       slug: params.slug
     })
-    await store.dispatch('catalog/category/getSeo', {
-      slug: params.slug
-    })
+    // await store.dispatch('catalog/category/getSeo', {
+    //   slug: params.slug
+    // })
   },
 
   methods: {
     ...mapActions({
         'sendToCart': 'catalog/cart/sendToCart',
-        'getSeo': 'catalog/category/getSeo'
+        // 'getSeo': 'catalog/category/getSeo'
       }
     )
   },
@@ -117,22 +117,22 @@ export default {
       products: 'catalog/category/products',
       pathAWS: 'catalog/category/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
-      seo: 'catalog/category/seo'
+      // seo: 'catalog/category/seo'
     }),
   },
 
-  head() {
-    return {
-      title: this.seo.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.seo.description
-        }
-      ]
-    }
-  },
+  // head() {
+  //   return {
+  //     title: this.seo.title,
+  //     meta: [
+  //       {
+  //         hid: 'description',
+  //         name: 'description',
+  //         content: this.seo.description
+  //       }
+  //     ]
+  //   }
+  // },
 
 
 
