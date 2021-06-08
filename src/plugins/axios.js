@@ -1,5 +1,5 @@
-export default function ({ $axios, store }) {
+export default function ({ $axios }) {
   $axios.onRequest((config) => {
-    $axios.setToken(process.env.TOKEN, 'Bearer')
+    $axios.setToken('1', 'Bearer')
   })
 }

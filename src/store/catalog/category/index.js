@@ -20,7 +20,7 @@ export const actions = {
   async getSeo({commit, state}, payload) {
     // console.log(payload.slug);
 
-    await this.$axios.setToken('1', 'Bearer')
+    // await this.$axios.setToken('1', 'Bearer')
 
     const {data} = await this.$axios.$get('get-all-category-seo', state.apiCRUD);
     const currentCategory = find(data, {'slug': payload.slug});
@@ -37,7 +37,7 @@ export const actions = {
 
   async getRubric({commit, state}, payload) {
 
-    await this.$axios.setToken('1', 'Bearer')
+    // await this.$axios.setToken('1', 'Bearer')
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
 
@@ -56,7 +56,7 @@ export const actions = {
 
 
 
-    await this.$axios.setToken('1', 'Bearer')
+    // await this.$axios.setToken('1', 'Bearer')
 
 
 

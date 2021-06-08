@@ -39,7 +39,7 @@ export const actions = {
 
 
 
-    await this.$axios.setToken('1', 'Bearer')
+    // await this.$axios.setToken('1', 'Bearer')
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
 
