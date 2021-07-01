@@ -32,7 +32,7 @@
             </svg>
             <strong>8 (920) 055-55-61</strong>
           </p>
-          <p class="mt-6 pt-2 text-xl md:text-center text-gray-100 animate-pulse ">При заказе через сайт для вас скидка 5%</p>
+          <p class="mt-6 pt-2 text-xl md:text-center text-gray-100 animate-pulse">При заказе через сайт для вас скидка 5%</p>
         </div>
 
         <div class="max-w-xs object-right justify-end">

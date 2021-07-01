@@ -99,9 +99,6 @@ export default {
     await store.dispatch('catalog/category/getProducts', {
       slug: params.slug
     })
-    // await store.dispatch('catalog/category/getSeo', {
-    //   slug: params.slug
-    // })
   },
 
   methods: {

@@ -3,7 +3,7 @@ require('dotenv').config();
 export default {
   mode: 'universal',
   server: {
-    port: 4000,
+    port: 4110,
     host: '0.0.0.0'
   },
   /*
@@ -52,15 +52,13 @@ export default {
       id: ''
     }],
     ['@nuxtjs/yandex-metrika', {
-      id: '59608552',
+      id: '82181533',
       webvisor: true,
       clickmap:true,
       useCDN:false,
       trackLinks:true,
       accurateTrackBounce:true,
-    }
-    ],
-
+    }],
   ],
   /*
   ** Axios module configuration

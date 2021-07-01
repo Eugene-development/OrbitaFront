@@ -43,7 +43,7 @@ export const actions = {
 
     const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + payload.id, state.apiCRUD);
     const rubricID = payload.id;
-
+//TODO Слабое место. Баг при перезагрузке
     commit('ALL_RUBRIC', data);
     commit('RUBRIC_ID', rubricID);
   },
@@ -51,7 +51,7 @@ export const actions = {
   async getProducts({commit, state}, payload) {
     const pathAWS = state.pathAWSBucket.path
     commit('PATH_AWS', pathAWS)
-    //TODO Слабое место. Баг при перезагрузке
+
 
 
 
