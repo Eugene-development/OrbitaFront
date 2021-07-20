@@ -20,40 +20,51 @@
                   @click="changeVisibleDescription"
                   class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                   :class="{ 'text-indigo-900 border-indigo-900': visibleDescription }"
-                >Описание</button>
+                >Описание
+                </button>
                 <button
                   @click="changeVisiblePayment"
                   class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                   :class="{ 'text-indigo-900 border-indigo-900': visiblePayment }"
-                >Оплата</button>
+                >Оплата
+                </button>
                 <button
                   @click="changeVisibleDelivery"
                   class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                   :class="{ 'text-indigo-900 border-indigo-900': visibleDelivery }"
-                >Доставка</button>
+                >Доставка
+                </button>
               </div>
 
 
-              <p v-show="visibleDescription" class="leading-relaxed mb-4" v-html="item.description"></p>
+              <div v-show="visibleDescription"  class="leading-relaxed mb-4 test" v-html="item.description"></div>
               <p v-show="visiblePayment" class="leading-relaxed mb-4">
                 Предлагаем следующие варианты оплаты: <br>
                 - наличными курьеру при получении товара;<br>
                 - картой через терминал, либо наличными в нашем офисе;<br>
-                - безналичный расчет (через банк для юридических лиц). Мы отправим счёт на оплату с нашими реквизитами на указанный вами электронный адрес. Доставка (самовывоз) товара осуществляется после получения денежных средств на наш расчётный счёт.</p>
-              <p v-show="visibleDelivery" class="leading-relaxed mb-4" >Для удобства мы предлагаем доставку товара на адрес объекта.
-                <br>Наша компания осуществляет доставку строительных и отделочных материалов как по Дзержинску, так и по Нижнему Новгороду и области. Стоимость доставки по Дзержинску составляет 350 рублей до 1500 кг, в Нижний Новгород от 1200 рублей. Более подробную информацию о стоимости за пределы города вы можете уточнить у менеджеров.</p>
+                - безналичный расчет (через банк для юридических лиц). Мы отправим счёт на оплату с нашими реквизитами
+                на указанный вами электронный адрес. Доставка (самовывоз) товара осуществляется после получения денежных
+                средств на наш расчётный счёт.</p>
+              <p v-show="visibleDelivery" class="leading-relaxed mb-4">Для удобства мы предлагаем доставку товара на
+                адрес объекта.
+                <br>Наша компания осуществляет доставку строительных и отделочных материалов как по Дзержинску, так и по
+                Нижнему Новгороду и области. Стоимость доставки по Дзержинску составляет 350 рублей до 1500 кг, в Нижний
+                Новгород от 1200 рублей. Более подробную информацию о стоимости за пределы города вы можете уточнить у
+                менеджеров.</p>
 
 
               <NuxtLink v-for="(category, idx) of category" :key="category.id"
-                :to="'/shop/category/products/' + category.slug">
-              <div
-                   class="flex border-t border-gray-200 py-2">
-                <span class="text-gray-500">Категория</span>
-                <span class="ml-auto text-gray-900">
+                        :to="'/shop/category/products/' + category.slug">
+                <div
+                  class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Категория</span>
+                  <span class="ml-auto text-gray-900">
                   {{ category.name }}
                 </span>
-              </div>
+                </div>
               </NuxtLink>
+
+
 
               <div class="flex border-t border-gray-200 py-2">
                 <span class="text-gray-500">Единица измерения</span>
@@ -72,8 +83,8 @@
                   wfd-id="157">В корзину
                 </button>
                 <button v-else
-                  class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
-                  wfd-id="157">Товар в корзине
+                        class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
+                        wfd-id="157">Товар в корзине
                 </button>
                 <button
                   class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 hover:bg-red-900"
@@ -87,10 +98,10 @@
               </div>
             </div>
 
-              <img
-                v-for="(image, idx) of item.image" :key="image.id"
-                alt="ecommerce" class="lg:w-1/2 w-full object-contain object-top rounded"
-                :src="`${pathAWS}${image.filename}`">
+            <img
+              v-for="(image, idx) of item.image" :key="image.id"
+              alt="ecommerce" class="lg:w-1/2 w-full object-contain object-top rounded"
+              :src="`${pathAWS}${image.filename}`">
 
           </div>
         </div>
@@ -101,7 +112,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   async asyncData({store, params}) {
@@ -115,7 +126,7 @@ export default {
       'changeVisibleDescription': 'catalog/products/changeVisibleDescription',
       'changeVisiblePayment': 'catalog/products/changeVisiblePayment',
       'changeVisibleDelivery': 'catalog/products/changeVisibleDelivery',
-      'sendToCart':'catalog/cart/sendToCart'
+      'sendToCart': 'catalog/cart/sendToCart'
     })
   },
 
@@ -132,3 +143,17 @@ export default {
   },
 }
 </script>
+
+
+<style>
+.test  {
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+}
+
+.test  {
+  list-style-type: decimal !important;
+  list-style-position: inside !important;
+}
+</style>
+

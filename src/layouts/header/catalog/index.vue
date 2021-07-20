@@ -51,9 +51,6 @@
                               :to="'/shop/category/' + rubric.id"
                               @click.native="close_visible">
                       <div class="flex text-gray-700">
-                        <svg class="mr-1.5 h-1.5 w-1.5 my-auto" fill="currentColor" viewBox="0 0 8 8">
-                          <circle cx="4" cy="4" r="3"/>
-                        </svg>
                         <p class="text-sm ml-1 text-gray-500 hover:text-gray-700">{{ rubric.name }}</p>
                       </div>
                     </NuxtLink>
