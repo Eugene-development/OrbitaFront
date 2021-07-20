@@ -22,13 +22,13 @@
 
 
 
-ul {
-  @apply list-disc list-outside ml-5;
-}
+/*ul {*/
+/*  @apply list-disc list-outside ml-5;*/
+/*}*/
 
-ol {
-  @apply list-decimal list-outside ml-5;
-}
+/*ol {*/
+/*  @apply list-decimal list-outside ml-5;*/
+/*}*/
 
 @layer base {
   ul {
@@ -47,6 +47,6 @@ ol {
     @apply text-lg;
   }
   a {
-    @apply text-blue-600 underline;
+    @apply text-blue-600 ;
   }
 }

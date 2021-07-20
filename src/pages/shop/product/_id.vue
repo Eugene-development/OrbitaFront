@@ -37,7 +37,7 @@
               </div>
 
 
-              <div v-show="visibleDescription"  class="leading-relaxed mb-4 test" v-html="item.description"></div>
+              <div v-show="visibleDescription"  class="leading-relaxed mb-4" v-html="item.description"></div>
               <p v-show="visiblePayment" class="leading-relaxed mb-4">
                 Предлагаем следующие варианты оплаты: <br>
                 - наличными курьеру при получении товара;<br>
@@ -145,15 +145,4 @@ export default {
 </script>
 
 
-<style>
-.test  {
-  list-style-type: disc !important;
-  list-style-position: inside !important;
-}
-
-.test  {
-  list-style-type: decimal !important;
-  list-style-position: inside !important;
-}
-</style>
 
