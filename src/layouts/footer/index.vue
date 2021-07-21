@@ -30,16 +30,13 @@
               <h3 class="text-lg font-semibold text-gray-400 tracking-wider uppercase">
                 Контакты:
               </h3>
-              <ul class="mt-4 space-y-4">
-                <li>
+              <div class="mt-4 space-y-4">
                   <p class="text-base text-gray-100 hover:text-white">
                     г. Дзержинск, пр. Ленина, д. 121-В
                   </p>
                   <p class="text-base text-gray-100 hover:text-white">
                     г. Дзержинск, ул. Космонавтов, 4-Б
                   </p>
-                </li>
-                <li >
                   <p class="text-base text-gray-100 hover:text-white flex">
                     <svg class="my-auto mr-2 text-red-800 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                          xmlns="http://www.w3.org/2000/svg">
@@ -48,16 +45,12 @@
                     </svg>
                     8 (920) 055-55-61
                   </p>
-                </li>
-                <li>
                   <p class="text-base text-gray-100 hover:text-white flex">
                     <svg class="my-auto mr-2 text-red-800 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     orbita88yuliya@mail.ru
                   </p>
-                </li>
-                <li>
                   <a class="text-base text-gray-100 hover:text-white flex"
                      href="https://vk.com/orbita_stroy"
                      target="_blank">
@@ -66,8 +59,7 @@
                     </svg>
                     vk.com/orbita_stroy
                   </a>
-                </li>
-              </ul>
+              </div>
             </div>
           </div>
 
