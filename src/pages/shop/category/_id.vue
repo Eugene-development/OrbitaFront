@@ -31,7 +31,7 @@
               <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
 
               <NuxtLink v-for="(category, idx) of rubric.category" :key="category.id"
-                        :to="'products/' + category.slug"
+                        :to="'/shop/products/' + category.slug"
                         class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                 <!-- Heroicon name: outline/folder -->
 <!--                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"-->
@@ -74,7 +74,7 @@
                 <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
                   <div class="flex-1">
                     <NuxtLink
-                      :to="'products/' + category.slug">
+                      :to="'/shop/products/' + category.slug">
                       <p class="text-xl font-semibold text-gray-900">
                         {{ category.name }}
                       </p>
