@@ -37,7 +37,10 @@ module.exports = {
       purple: colors.purple,
       fuchsia: colors.fuchsia,
       pink: colors.pink,
-      rose: colors.rose
+      rose: colors.rose,
+      main: {
+        DEFAULT: 'rgb(54 79 113)',
+      },
     }
   },
   variants: {
@@ -46,5 +49,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

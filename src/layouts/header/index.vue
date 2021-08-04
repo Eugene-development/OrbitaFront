@@ -233,9 +233,5 @@ export default {
   },
 
 
-  // mounted() {
-  //   this.getLengthCart();
-  // },
-
 }
 </script>

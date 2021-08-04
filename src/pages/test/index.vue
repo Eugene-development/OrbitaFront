@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="(true || false) && !true">
     <ol class="test">
       <li>первый</li>
       <li>второй</li>
