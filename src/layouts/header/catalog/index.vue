@@ -48,7 +48,7 @@
                 <ul class="mt-4">
                   <li v-for="(rubric, idx) of head.rubric" :key="allHead.id" class="mt-3 hover:text-gray-700 ">
                     <NuxtLink active-class="active"
-                              :to="'/shop/category/' + rubric.id"
+                              :to="'/shop/category/' + rubric.slug"
                               @click.native="close_visible">
                       <div class="flex text-gray-700">
                         <p class="text-sm ml-1 text-gray-500 hover:text-gray-700">{{ rubric.name }}</p>

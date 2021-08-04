@@ -1,9 +1,8 @@
 <template>
-
   <div class="">
 
-    <div v-for="(rubric, idx) of allRubric" :key="allRubric.id">
-      <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
+    <div v-for="(rubric, idx) of allCategories" :key="allCategories.id">
+      <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white to-yellow-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
           <h1 class=" text-5xl font-medium title-font text-gray-900">{{ rubric.name }}</h1>
         </div>
@@ -31,16 +30,16 @@
               <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
 
               <NuxtLink v-for="(category, idx) of rubric.category" :key="category.id"
-                        :to="'/shop/products/' + category.slug"
+                        :to="'/products/' + category.slug"
                         class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                 <!-- Heroicon name: outline/folder -->
-<!--                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"-->
-<!--                     fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
-<!--                  <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"-->
-<!--                        stroke-linecap="round"-->
-<!--                        stroke-linejoin="round"-->
-<!--                        stroke-width="2"/>-->
-<!--                </svg>-->
+                <!--                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"-->
+                <!--                     fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
+                <!--                  <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"-->
+                <!--                        stroke-linecap="round"-->
+                <!--                        stroke-linejoin="round"-->
+                <!--                        stroke-width="2"/>-->
+                <!--                </svg>-->
 
                 {{ category.name }}
 
@@ -55,7 +54,7 @@
 
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-8 lg:pb-28 lg:px-8">
-          <div v-for="(rubric, idx) of allRubric" :key="allRubric.id" class="relative max-w-7xl mx-auto">
+          <div v-for="(rubric, idx) of allCategories" :key="allCategories.id" class="relative max-w-7xl mx-auto">
             <!--          <div class="text-center">-->
             <!--            <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">-->
             <!--              {{ rubric.name }}-->
@@ -139,26 +138,26 @@
 import { mapGetters } from "vuex";
 
 export default {
-  validate({params}) {
-    return /^\d+$/.test(params.id);
-  },
+  // validate({params}) {
+  //   return /^\d+$/.test(params.id);
+  // },
   async asyncData({store, params}) {
-    await store.dispatch('catalog/category/getRubric', {
-      id: params.id
+    await store.dispatch('catalog/category/getCategories', {
+      slug: params.slug
     })
   },
 
 
   computed: {
     ...mapGetters({
-      allRubric: 'catalog/category/allRubric',
+      allCategories: 'catalog/category/allCategories',
     }),
   },
 
   data() {
     return {
-      title: 'Орбита-строй || Каталог магазина строительных и отделочных материалов',
-      description: 'Большой каталог строительных и отделочныстроительныхх материалов компании Орбита-строй - интернет-магазине стройматериалов в Дзержинске',
+      title: 'Орбита-строй || Каталог магазина строительных и отделочных материалов в Нижнем Новгороде',
+      description: 'Большой каталог строительных и отделочныстроительныхх материалов компании Орбита-строй - интернет-магазине стройматериалов в Нижнем Новгороде',
     }
   },
   head() {
