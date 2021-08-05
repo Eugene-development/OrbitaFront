@@ -33,8 +33,6 @@ export const actions = {
 
   async getProduct({commit, state}, payload) {
 
-    console.log(payload);
-
     //Получил Id продукта по слагу в пейлоаде
     const products = await this.$axios.$get('get-all-product', state.apiCRUD);
 
