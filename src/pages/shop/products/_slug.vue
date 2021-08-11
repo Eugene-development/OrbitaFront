@@ -131,7 +131,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.products.name.toUpperCase() + ' в Дзержинске Нижегородской области. ' + this.seoDescription
+          content: this.products.name + ' в Дзержинске Нижегородской области. ' + this.seoDescription
         }
       ]
     }
