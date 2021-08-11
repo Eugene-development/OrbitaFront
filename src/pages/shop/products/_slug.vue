@@ -114,53 +114,28 @@ export default {
       products: 'catalog/category/products',
       pathAWS: 'catalog/category/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
-      // seo: 'catalog/category/seo'
     }),
+    seoTitle: function () {
+      return this.products.seo ? this.products.seo.title : 'Стройматериалы'
+    },
+    seoDescription: function () {
+      return this.products.seo ? this.products.seo.description : 'Стройматериалы в Дзержинске'
+    }
+
   },
 
-  // head() {
-  //   return {
-  //     title: this.seo.title,
-  //     meta: [
-  //       {
-  //         hid: 'description',
-  //         name: 'description',
-  //         content: this.seo.description
-  //       }
-  //     ]
-  //   }
-  // },
-
-
-
-
-
-
-
-
-  //Не подходит. Нужно суо с сервера уже получать
-  // mounted() {
-  //   this.getSeo('31');
-  // },
-
-
-  // async asyncData({store, params}, allRubric) {
-  //   await store.dispatch('catalog/category/fetch', {
-  //     id: 1
-  //   });
-  //
-  //   await store.dispatch('catalog/category/getProduct', {
-  //     allRubric: allRubric,
-  //     slug: params.slug
-  //   })
-  // },
-  //
-  //
-  // methods: {
-  //   ...mapActions({
-  //     'getBread': 'catalog/category/fetch2',
-  //   })
-  // },
+  head() {
+    return {
+      title: 'Стройбаза "Орбита-строй" Дзержинск || ' + this.products.name + ' || ' + this.seoTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.products.name.toUpperCase() + ' в Дзержинске Нижегородской области. ' + this.seoDescription
+        }
+      ]
+    }
+  },
 
 
 }
