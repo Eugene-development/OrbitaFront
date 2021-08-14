@@ -104,7 +104,6 @@ export default {
   methods: {
     ...mapActions({
         'sendToCart': 'catalog/cart/sendToCart',
-        // 'getSeo': 'catalog/category/getSeo'
       }
     )
   },
