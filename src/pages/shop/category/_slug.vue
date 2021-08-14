@@ -152,22 +152,26 @@ export default {
     ...mapGetters({
       allCategories: 'catalog/category/allCategories',
     }),
+    categoryName: function () {
+      return this.allCategories[0].name;
+    },
+    seoTitle: function () {
+      return this.allCategories.seo ? this.allCategories.seo.title : 'Строительные и отделочные материалы';
+    },
+    seoDescription: function () {
+      return this.allCategories.seo ? this.allCategories.seo.description : 'Строительные и отделочные материалы в Нижнем Новгороде и области';
+    }
+
   },
 
-  data() {
-    return {
-      title: 'Орбита-строй || Каталог магазина строительных и отделочных материалов в Нижнем Новгороде',
-      description: 'Большой каталог строительных и отделочныстроительныхх материалов компании Орбита-строй - интернет-магазине стройматериалов в Нижнем Новгороде',
-    }
-  },
   head() {
     return {
-      title: this.title,
+      title: 'Строительная база Орбита-Строй в Нижнем Новгороде || ' + this.categoryName + ' || ' + this.seoTitle,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.categoryName + ' в Нижнем Новгороде и области. ' + this.seoDescription
         }
       ]
     }

@@ -120,7 +120,6 @@ export default {
     seoDescription: function () {
       return this.products.seo ? this.products.seo.description : 'Стройматериалы в Дзержинске'
     }
-
   },
 
   head() {

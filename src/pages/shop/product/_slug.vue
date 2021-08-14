@@ -133,12 +133,11 @@ export default {
       return this.product[0].name;
     },
     seoTitle: function () {
-      return this.product.seo ? this.product.seo.title : 'Строительные материалы';
+      return this.product.seo ? this.product.seo.title : 'Строительные и отделочные материалы';
     },
     seoDescription: function () {
-      return this.product.seo ? this.product.seo.description : 'Строительные материалы в Дзержинске';
+      return this.product.seo ? this.product.seo.description : 'Строительные и отделочные материалы в Дзержинске';
     }
-
   },
 
 
