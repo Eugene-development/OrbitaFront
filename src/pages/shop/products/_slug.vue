@@ -125,7 +125,7 @@ export default {
 
   head() {
     return {
-      title: 'Стройбаза "Орбита-строй" Дзержинск || ' + this.products.name + ' || ' + this.seoTitle,
+      title: 'Стройбаза Орбита-строй Дзержинск || ' + this.products.name + ' || ' + this.seoTitle,
       meta: [
         {
           hid: 'description',
