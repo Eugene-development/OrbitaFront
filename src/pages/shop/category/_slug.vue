@@ -159,19 +159,19 @@ export default {
       return this.allCategories.seo ? this.allCategories.seo.title : 'Строительные и отделочные материалы';
     },
     seoDescription: function () {
-      return this.allCategories.seo ? this.allCategories.seo.description : 'Строительные и отделочные материалы в Нижнем Новгороде и области';
+      return this.allCategories.seo ? this.allCategories.seo.description : 'Строительные и отделочные материалы в Дзержинске и области';
     }
 
   },
 
   head() {
     return {
-      title: 'Строительная база Орбита-Строй в Нижнем Новгороде || ' + this.categoryName + ' || ' + this.seoTitle,
+      title: 'Стройматериалы || ' + this.categoryName + ' в Дзержинске || ' + this.seoTitle,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.categoryName + ' в Нижнем Новгороде и области. ' + this.seoDescription
+          content: this.categoryName + ' в Дзержинске и области. ' + this.seoDescription
         }
       ]
     }
