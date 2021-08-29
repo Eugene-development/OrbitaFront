@@ -4,7 +4,7 @@
     <div v-for="(rubric, idx) of allCategories" :key="allCategories.id">
       <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white to-yellow-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
-          <h1 class=" text-5xl font-medium title-font text-gray-900">{{ rubric.name }}</h1>
+          <h1 class=" text-5xl font-medium title-font text-gray-900">{{ rubric.name }} в Дзержинске</h1>
         </div>
       </div>
 
