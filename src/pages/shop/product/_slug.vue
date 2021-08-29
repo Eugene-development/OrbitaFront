@@ -143,12 +143,12 @@ export default {
 
   head() {
     return {
-      title: 'Стройбаза Орбита-строй Дзержинск || ' + this.productName + ' || ' + this.seoTitle,
+      title: this.productName + ' в Дзержинске || ' + this.seoTitle,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.productName + ' в Дзержинске Нижегородской области. ' + this.seoDescription
+          content: this.productName + 'в наличии в Дзержинске Нижегородской области. ' + this.seoDescription
         }
       ]
     }
