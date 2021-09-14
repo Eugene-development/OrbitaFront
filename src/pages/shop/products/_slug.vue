@@ -129,7 +129,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.products.name + 'со склада в Дзержинске Нижегородской области. ' + this.seoDescription
+          content: this.products.name + ' со склада в Дзержинске Нижегородской области. ' + this.seoDescription
         }
       ]
     }

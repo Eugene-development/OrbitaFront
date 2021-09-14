@@ -148,7 +148,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.productName + 'в наличии в Дзержинске Нижегородской области. ' + this.seoDescription
+          content: this.productName + ' в наличии в Дзержинске Нижегородской области. ' + this.seoDescription
         }
       ]
     }
