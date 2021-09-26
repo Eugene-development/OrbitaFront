@@ -27,10 +27,6 @@ export const actions = {
     // await this.$axios.setToken('1', 'Bearer')
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
-
-
-
-
     //TODO а как на счёт искать по слагу на бэке?
     //Получил Id категории по слагу в пейлоаде
     const rubrics = await this.$axios.$get('get-all-rubric', state.apiCRUD);
