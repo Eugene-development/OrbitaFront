@@ -20,7 +20,7 @@
             <!--              stroke-width="2"/>-->
             <!--          </svg>-->
             <div class="text-gray-900 text-2xl">
-              <strong>{{ allCategories.name }}</strong>
+              <strong>{{ rubric.name }}</strong>
             </div>
           </div>
 
@@ -29,7 +29,7 @@
             <nav aria-label="Sidebar" class="flex-1 px-2 space-y-1">
               <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
 
-              <NuxtLink v-for="(category, idx) of allCategories.category" :key="category.id"
+              <NuxtLink v-for="(category, idx) of rubric.category" :key="category.id"
                         :to="'/products/' + category.slug"
                         class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                 <!-- Heroicon name: outline/folder -->
@@ -53,78 +53,78 @@
         </div>
 
         <!-- This example requires Tailwind CSS v2.0+ -->
-<!--        <div class="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-8 lg:pb-28 lg:px-8">-->
-<!--          <div v-for="(rubric, idx) of allCategories" :key="rubric.id" class="relative max-w-7xl mx-auto">-->
-<!--            &lt;!&ndash;          <div class="text-center">&ndash;&gt;-->
-<!--            &lt;!&ndash;            <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">&ndash;&gt;-->
-<!--            &lt;!&ndash;              {{ rubric.name }}&ndash;&gt;-->
-<!--            &lt;!&ndash;            </h2>&ndash;&gt;-->
-<!--            &lt;!&ndash;            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">&ndash;&gt;-->
-<!--            &lt;!&ndash;              Наша компания предлагает стройматериалы по самым низким ценам&ndash;&gt;-->
-<!--            &lt;!&ndash;            </p>&ndash;&gt;-->
-<!--            &lt;!&ndash;          </div>&ndash;&gt;-->
-<!--            &lt;!&ndash;          <hr class="mt-8">&ndash;&gt;-->
-<!--            <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">-->
-<!--              <div v-for="(category, idx) of rubric.category" :key="category.id"-->
-<!--                   class=" flex flex-col rounded-lg shadow-lg overflow-hidden border-2">-->
-<!--                &lt;!&ndash;            <div class="flex-shrink-0">&ndash;&gt;-->
-<!--                &lt;!&ndash;              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">&ndash;&gt;-->
-<!--                &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--                <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">-->
-<!--                  <div class="flex-1">-->
-<!--                    <NuxtLink-->
-<!--                      :to="'/shop/products/' + category.slug">-->
-<!--                      <p class="text-xl font-semibold text-gray-900">-->
-<!--                        {{ category.name }}-->
-<!--                      </p>-->
-<!--&lt;!&ndash;                      <p v-for="(text, idx) of category.text" :key="text.id"&ndash;&gt;-->
-<!--&lt;!&ndash;                         class="mt-3 text-base text-gray-500">&ndash;&gt;-->
-<!--&lt;!&ndash;                        {{ text.H2 }}&ndash;&gt;-->
-<!--&lt;!&ndash;                      </p>&ndash;&gt;-->
-<!--                      <p class="mt-2 text-base font-medium text-red-800 place-items-end">-->
-<!--                        Выбрать &rarr;-->
-<!--                        &lt;!&ndash;                    <NuxtLink&ndash;&gt;-->
-<!--                        &lt;!&ndash;                      :to="'products/' + category.slug"&ndash;&gt;-->
-<!--                        &lt;!&ndash;                      @click.native="getProduct ([category.slug, allRubric])"&ndash;&gt;-->
-<!--                        &lt;!&ndash;                      class="hover:underline"&ndash;&gt;-->
-<!--                        &lt;!&ndash;                    >&ndash;&gt;-->
-<!--                        &lt;!&ndash;                      Подробнее &rarr;&ndash;&gt;-->
-<!--                        &lt;!&ndash;                    </NuxtLink>&ndash;&gt;-->
-<!--                      </p>-->
-<!--                    </NuxtLink>-->
-<!--                  </div>-->
-<!--                  &lt;!&ndash;              <div class="mt-6 flex items-center">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                <div class="flex-shrink-0">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  <a href="#">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    <span class="sr-only">Roel Aufderehar</span>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  </a>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                </div>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                <div class="ml-3">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  <p class="text-sm font-medium text-gray-900">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    <a href="#" class="hover:underline">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                      Roel Aufderehar&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    </a>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  </p>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  <div class="flex space-x-1 text-sm text-gray-500">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    <time datetime="2020-03-16">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                      Mar 16, 2020&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    </time>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    <span aria-hidden="true">&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  &middot;&ndash;&gt;-->
-<!--                  &lt;!&ndash;                </span>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                    <span>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  6 min read&ndash;&gt;-->
-<!--                  &lt;!&ndash;                </span>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--                  &lt;!&ndash;                </div>&ndash;&gt;-->
-<!--                  &lt;!&ndash;              </div>&ndash;&gt;-->
-<!--                </div>-->
-<!--              </div>-->
+        <div class="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-8 lg:pb-28 lg:px-8">
+          <div class="relative max-w-7xl mx-auto">
+            <!--          <div class="text-center">-->
+            <!--            <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">-->
+            <!--              {{ rubric.name }}-->
+            <!--            </h2>-->
+            <!--            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">-->
+            <!--              Наша компания предлагает стройматериалы по самым низким ценам-->
+            <!--            </p>-->
+            <!--          </div>-->
+            <!--          <hr class="mt-8">-->
+            <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+              <div v-for="(category, idx) of rubric.category" :key="category.id"
+                   class=" flex flex-col rounded-lg shadow-lg overflow-hidden border-2">
+                <!--            <div class="flex-shrink-0">-->
+                <!--              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">-->
+                <!--            </div>-->
+                <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
+                  <div class="flex-1">
+                    <NuxtLink
+                      :to="'/shop/products/' + category.slug">
+                      <p class="text-xl font-semibold text-gray-900">
+                        {{ category.name }}
+                      </p>
+                      <p v-if="category.text"
+                         class="mt-3 text-base text-gray-500">
+                        {{ category.text.descriptionText }}
+                      </p>
+                      <p class="mt-2 text-base font-medium text-red-800 place-items-end">
+                        Выбрать &rarr;
+                        <!--                    <NuxtLink-->
+                        <!--                      :to="'products/' + category.slug"-->
+                        <!--                      @click.native="getProduct ([category.slug, allRubric])"-->
+                        <!--                      class="hover:underline"-->
+                        <!--                    >-->
+                        <!--                      Подробнее &rarr;-->
+                        <!--                    </NuxtLink>-->
+                      </p>
+                    </NuxtLink>
+                  </div>
+                  <!--              <div class="mt-6 flex items-center">-->
+                  <!--                <div class="flex-shrink-0">-->
+                  <!--                  <a href="#">-->
+                  <!--                    <span class="sr-only">Roel Aufderehar</span>-->
+                  <!--                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">-->
+                  <!--                  </a>-->
+                  <!--                </div>-->
+                  <!--                <div class="ml-3">-->
+                  <!--                  <p class="text-sm font-medium text-gray-900">-->
+                  <!--                    <a href="#" class="hover:underline">-->
+                  <!--                      Roel Aufderehar-->
+                  <!--                    </a>-->
+                  <!--                  </p>-->
+                  <!--                  <div class="flex space-x-1 text-sm text-gray-500">-->
+                  <!--                    <time datetime="2020-03-16">-->
+                  <!--                      Mar 16, 2020-->
+                  <!--                    </time>-->
+                  <!--                    <span aria-hidden="true">-->
+                  <!--                  &middot;-->
+                  <!--                </span>-->
+                  <!--                    <span>-->
+                  <!--                  6 min read-->
+                  <!--                </span>-->
+                  <!--                  </div>-->
+                  <!--                </div>-->
+                  <!--              </div>-->
+                </div>
+              </div>
 
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
+            </div>
+          </div>
+        </div>
 
         <!--    {{ new Date().toLocaleString()}}-->
       </div>
