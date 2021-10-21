@@ -142,7 +142,7 @@ export default {
   //   return /^\d+$/.test(params.id);
   // },
   async asyncData({store, params}) {
-    await store.dispatch('catalog/category/getRubric', {
+    await store.dispatch('catalog/rubric/getRubric', {
       slug: params.slug
     })
   },
@@ -150,7 +150,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      rubric: 'catalog/category/rubric',
+      rubric: 'catalog/rubric/rubric',
     }),
     rubricName: function () {
       return this.rubric.name;
