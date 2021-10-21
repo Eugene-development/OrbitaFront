@@ -20,15 +20,15 @@ export const state = () => ({
 
 export const actions = {
 
-  async getCategories({commit, state}, payload) {
+  async getRubric({commit, state}, payload) {
 
     //TODO токены
 
     // await this.$axios.setToken('1', 'Bearer')
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
-    //TODO а как на счёт искать по слагу на бэке?
-    //Получил Id категории по слагу в пейлоаде
+
+    // Получил Id категории по слагу в пейлоаде
     const rubrics = await this.$axios.$get('get-all-rubric', state.apiCRUD);
 
     forEach(rubrics, function (value) {
@@ -36,10 +36,10 @@ export const actions = {
       commit('RUBRIC_ID', id);
     });
 
-    const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
+    const {data} = await this.$axios.$get('get-rubric/' + state.rubricID, state.apiCRUD);
     // const rubricID = payload.id;
 //TODO Слабое место. Баг при перезагрузке
-    commit('ALL_CATEGORIES', data);
+    commit('RUBRIC', data[0]);
     // commit('RUBRIC_ID', rubricID);
   },
 
@@ -73,7 +73,7 @@ export const actions = {
 
 
 export const mutations = {
-  ALL_CATEGORIES: (state, data) => state.allCategories = data,
+  RUBRIC: (state, data) => state.rubric = data,
   PRODUCTS: (state, data) => state.products = data,
   RUBRIC_ID: (state, id) => state.rubricID = id,
   CATEGORY_ID: (state, id) => state.categoryId = id,
@@ -82,7 +82,7 @@ export const mutations = {
 };
 
 export const getters = {
-  allCategories: state => state.allCategories,
+  rubric: state => state.rubric,
   products: state => state.products,
   pathAWS: state => state.pathAWS,
 };
