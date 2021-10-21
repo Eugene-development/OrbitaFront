@@ -50,8 +50,8 @@ export const actions = {
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
 
-    const { data } = await this.$axios.$get('get-one-product/' + state.productId, state.apiCRUD);
-    commit('PRODUCT', data);
+    const { data } = await this.$axios.$get('get-product/' + state.productId, state.apiCRUD);
+    commit('PRODUCT', data[0]);
 
 
     const category = map(data, 'category');

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-for="(item, idx) of product" :key="item.id">
+    <div >
 
 
       <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white to-yellow-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
-          <h1 class=" text-5xl font-medium title-font text-gray-900">{{ item.name }}</h1>
+          <h1 class=" text-5xl font-medium title-font text-gray-900">{{ product.name }}</h1>
         </div>
       </div>
 
@@ -14,7 +14,7 @@
           <div class="lg:w-4/5 mx-auto flex flex-wrap">
             <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
               <h2 class="text-sm title-font text-gray-500 tracking-widest">НАИМЕНОВАНИЕ</h2>
-              <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{ item.name }}</h1>
+              <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{ product.name }}</h1>
               <div class="flex mb-4">
                 <button
                   @click="changeVisibleDescription"
@@ -34,7 +34,7 @@
               </div>
 
 
-              <p v-show="visibleDescription" class="leading-relaxed mb-4" v-html="item.description"></p>
+              <p v-show="visibleDescription" class="leading-relaxed mb-4" v-html="product.description"></p>
               <p v-show="visiblePayment" class="leading-relaxed mb-4">
                 Предлагаем следующие варианты оплаты: <br>
                 - наличными курьеру при получении товара;<br>
@@ -57,17 +57,17 @@
 
               <div class="flex border-t border-gray-200 py-2">
                 <span class="text-gray-500">Единица измерения</span>
-                <span class="ml-auto text-gray-900">{{ item.unit }}</span>
+                <span class="ml-auto text-gray-900">{{ product.unit }}</span>
               </div>
               <div class="flex border-t border-b mb-6 border-gray-200 py-2">
                 <span class="text-gray-500">Наличие на складе</span>
-                <span class="ml-auto text-gray-900">да</span>
+                <span class="ml-auto text-gray-900">Уточняйте у менеджера</span>
               </div>
               <div class="flex">
-                <span class="title-font font-medium text-4xl text-gray-900">{{ item.price }} руб/{{ item.unit }}.</span>
+                <span class="title-font font-medium text-4xl text-gray-900">{{ product.size[0].price.price }} руб/{{ product.unit }}.</span>
                 <button
-                  v-if="!productsInCart.some(arrVal => item.id === arrVal)"
-                  @click.prevent.once="sendToCart (item.id)"
+                  v-if="!productsInCart.some(arrVal => product.id === arrVal)"
+                  @click.prevent.once="sendToCart (product.id)"
                   class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
                   wfd-id="157">В корзину
                 </button>
@@ -88,7 +88,7 @@
             </div>
 
             <img
-              v-for="(image, idx) of item.image" :key="image.id"
+              v-for="(image, idx) of product.image" :key="image.id"
               alt="ecommerce" class="lg:w-1/2 max-w-xl object-contain object-top rounded"
               :src="`${pathAWS}${image.filename}`">
 
@@ -130,7 +130,7 @@ export default {
       productsInCart: 'catalog/cart/productsInCart',
     }),
     productName: function () {
-      return this.product[0].name;
+      return this.product.name;
     },
     seoTitle: function () {
       return this.product.seo ? this.product.seo.title : 'Строительные и отделочные материалы';
