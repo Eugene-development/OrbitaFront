@@ -23,7 +23,7 @@
       <div
         class="max-w-7xl mx-auto grid gap-y-6 px-2 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-6 lg:px-2 lg:py-12 xl:py-16">
         <div
-          v-for="(head, idx) of allHead" :key="allHead.id"
+          v-for="(head, idx) of allHead.head" :key="head.id"
           class="flex flex-col justify-between rounded-lg"
         >
           <div class="flex md:h-full lg:flex-col">
@@ -46,7 +46,7 @@
                   <strong>{{ head.name }}</strong>
                 </p>
                 <ul class="mt-4">
-                  <li v-for="(rubric, idx) of head.rubric" :key="allHead.id" class="mt-3 hover:text-gray-700 ">
+                  <li v-for="(rubric, idx) of head.rubric" :key="rubric.id" class="mt-3 hover:text-gray-700 ">
                     <NuxtLink active-class="active"
                               :to="'/shop/category/' + rubric.slug"
                               @click.native="close_visible">

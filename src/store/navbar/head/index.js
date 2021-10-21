@@ -4,10 +4,11 @@ export const state = () => ({
 });
 
 export const actions = {
-  async fetch ({ commit, state}) {
+  async getCatalog ({ commit, state}) {
 
-    const { data } = await this.$axios.$get('get-all-head-rubric', state.apiCRUD);
-    commit('ALL_HEAD', data);
+    const catalogID = 2;//TODO HardCore
+    const { data } = await this.$axios.$get('get-menu/' + catalogID, state.apiCRUD);
+    commit('ALL_HEAD', data[0]);
   },
 };
 
