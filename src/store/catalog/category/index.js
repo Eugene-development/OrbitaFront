@@ -2,7 +2,7 @@ import {forEach} from 'lodash';
 import {find} from 'lodash';
 
 export const state = () => ({
-  products: [],
+  category: [],
   pathAWS: '',
   categoryId: null,
 
@@ -18,7 +18,7 @@ export const state = () => ({
 
 export const actions = {
 
-  async getProducts({commit, state}, payload) {
+  async getCategory({commit, state}, payload) {
 
 
     const pathAWS = state.pathAWSBucket.path
@@ -33,8 +33,8 @@ export const actions = {
       commit('CATEGORY_ID', id);
     });
 
-    const {data} = await this.$axios.$get('get-WhCategory-HmProduct-HmImageProduct-HmTextProduct-CoProduct/' + state.categoryId, state.apiCRUD);
-    commit('PRODUCTS', data[0]);
+    const {data} = await this.$axios.$get('get-category/' + state.categoryId, state.apiCRUD);
+    commit('CATEGORY', data[0]);
 
 
     // const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
@@ -48,14 +48,13 @@ export const actions = {
 
 
 export const mutations = {
-  PRODUCTS: (state, data) => state.products = data,
+  CATEGORY: (state, data) => state.category = data,
   CATEGORY_ID: (state, id) => state.categoryId = id,
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
 
 };
 
 export const getters = {
-  rubric: state => state.rubric,
-  products: state => state.products,
+  category: state => state.category,
   pathAWS: state => state.pathAWS,
 };

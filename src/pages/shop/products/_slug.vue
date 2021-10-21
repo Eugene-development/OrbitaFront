@@ -2,7 +2,7 @@
   <div class="bg-blueGray-200">
     <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
       <div class="flex flex-col text-center w-full">
-        <h1 class=" text-5xl font-medium title-font text-gray-900">{{ products.name }} в Дзержинске</h1>
+        <h1 class=" text-5xl font-medium title-font text-gray-900">{{ category.name }} в Дзержинске</h1>
       </div>
     </div>
 
@@ -10,7 +10,7 @@
       <!--    <p>{{$route.params.slug}}</p>-->
       <!-- This example requires Tailwind CSS v2.0+ -->
       <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <li v-for="(product, idx) of products.product" :key="product.id"
+        <li v-for="(product, idx) of category.product" :key="product.id"
             class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg divide-y divide-gray-200">
           <NuxtLink
             :to="'/shop/product/' + product.slug">
@@ -96,7 +96,7 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   async asyncData({store, params}) {
-    await store.dispatch('catalog/category/getProducts', {
+    await store.dispatch('catalog/category/getCategory', {
       slug: params.slug
     })
   },
@@ -110,26 +110,26 @@ export default {
 
   computed: {
     ...mapGetters({
-      products: 'catalog/category/products',
+      category: 'catalog/category/category',
       pathAWS: 'catalog/category/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
     }),
     seoTitle: function () {
-      return this.products.seo ? this.products.seo.title : 'Стройматериалы'
+      return this.category.seo ? this.category.seo.title : 'Стройматериалы'
     },
     seoDescription: function () {
-      return this.products.seo ? this.products.seo.description : 'Стройматериалы в Дзержинске'
+      return this.category.seo ? this.category.seo.description : 'Стройматериалы в Дзержинске'
     }
   },
 
   head() {
     return {
-      title: this.products.name + ' в Дзержинске || ' + this.seoTitle,
+      title: this.category.name + ' в Дзержинске || ' + this.seoTitle,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.products.name + ' со склада в Дзержинске Нижегородской области. ' + this.seoDescription
+          content: this.category.name + ' со склада в Дзержинске Нижегородской области. ' + this.seoDescription
         }
       ]
     }
