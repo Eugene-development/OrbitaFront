@@ -31,19 +31,27 @@
         <div class="relative shadow-xl  sm:overflow-hidden">
           <div class="absolute inset-0">
             <img alt="home" class="h-full w-full object-cover" src="/slider/slider4.jpg">
-            <div class="absolute inset-0 bg-gradient-to-r from-blueGray-300 to-blueGray-500"
+            <div class="absolute inset-0 bg-gradient-to-r from-blueGray-300 via-blueGray-500 to-blueGray-300"
                  style="mix-blend-mode: multiply;"></div>
           </div>
           <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 class="mb-12 text-center text-5xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
               <span class="block text-white mb-4">База строительных и отделочных материалов</span>
-              <span class="block text-indigo-300">"Орбита-строй"</span>
+              <span class="block text-indigo-100">"Орбита-строй"</span>
             </h1>
             <hr>
-            <h2 class="mt-6 max-w-lg mx-auto text-center text-3xl text-indigo-100 sm:max-w-3xl">
+            <h2 class="mt-6 max-w-lg mx-auto text-center text-3xl text-indigo-50 sm:max-w-3xl">
               Оптовая и розничная продажа<br>
               строительных и отделочных материалов
             </h2>
+
+
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <NuxtLink to="/actions" class="font-semibold	tracking-wider flex items-center justify-center px-3 py-3 border border-transparent text-xl font-medium rounded-md shadow-sm text-red-900 bg-white hover:bg-indigo-50 sm:px-8">
+                Наши акции
+              </NuxtLink>
+            </div>
+
 
             <!--                    <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">-->
             <!--                      <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">-->

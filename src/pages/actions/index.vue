@@ -143,7 +143,7 @@
               <div class="sm:text-center">
                 <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
                   Плита ОСБ-3 Кроношпан 9мм 1250*2500мм
-                  <br>780 рублей
+                  <br>760 рублей
                 </h2>
                 <p class="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
                   Только до 10 ноября! Специальное предложение при наличном расчете! Cкидки и акции не суммируются.

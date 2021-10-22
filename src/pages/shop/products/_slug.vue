@@ -27,9 +27,7 @@
               <!--            <dd class="text-gray-500 text-sm">Paradigm Representative</dd>-->
               <dt class="sr-only">Role</dt>
               <dd class="mt-3">
-                <span class="px-2 py-1 text-green-800 text-base font-medium bg-green-100 rounded-full">{{
-                    product.price
-                  }} р/{{ product.unit }}</span>
+                <span class="px-2 py-1 text-green-800 text-base font-medium bg-green-100 rounded-full">{{ product.size[0].price.price }} р/{{ product.unit }}</span>
               </dd>
             </dl>
           </div>
