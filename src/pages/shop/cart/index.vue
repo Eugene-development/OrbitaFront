@@ -73,11 +73,11 @@
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  {{ item.price }} руб/{{ item.unit }}
+                  {{ item.size[0].price.price}} руб/{{ item.unit }}
                 </span>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {{ (item.price * item.quantity).toFixed(2) }} руб.
+                  {{ (item.size[0].price.price * item.quantity).toFixed(2) }} руб.
                 </td>
 
 
