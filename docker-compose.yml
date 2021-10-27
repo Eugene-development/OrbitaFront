@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
-    container_name: orbita_app
+    container_name: "${COMPOSE_PROJECT_NAME}_NUXT"
     restart: always
     ports:
       - "4110:4110"
@@ -16,7 +16,7 @@ services:
 
   nginx:
     image: nginx:1.13
-    container_name: orbita_nginx
+    container_name: "${COMPOSE_PROJECT_NAME}_NGINX"
     ports:
       - "4115:80"
     volumes:
