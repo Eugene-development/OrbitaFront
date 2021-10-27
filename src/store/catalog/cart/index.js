@@ -279,9 +279,6 @@ export const actions = {
       commit('CART', []);
       //Обнуляем общую сумму корзины
       commit('TOTAL_SUM', '');
-
-
-
     }
 
   }

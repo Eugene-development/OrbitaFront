@@ -22,8 +22,8 @@
 
         </div>
         <div class="max-w-5xl mr-8 justify-items-center object-center items-center  ">
-          <p class="font-extrasolar text-red-700  md:text-6xl sm:text-5xl border-b-1 flex">
-            <svg class="mt-2 mr-2 w-12 h-12 hidden lg:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          <p class="font-serif  text-red-700  md:text-7xl sm:text-5xl border-b-1 flex">
+            <svg class="mt-2 mr-4 w-16 h-16 hidden lg:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                  xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M21 3l-6 6m0 0V4m0 5h5M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z"
@@ -49,9 +49,8 @@
                 stroke-width="2"></path>
             </svg>
             <!-- This example requires Tailwind CSS v2.0+ -->
-            <span class="w-full inline-flex items-center justify-center p-1 rounded text-xs font-medium bg-red-700 text-gray-50">
+            <span class="w-full mt-2 inline-flex items-center justify-center p-1 rounded text-xs font-medium bg-red-700 text-gray-50">
                           Корзина
-
               <svg class="mx-2 animate-ping mr-1.5 h-2 w-2 text-blueGray-50" fill="currentColor" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="3"/>
               </svg>
@@ -62,11 +61,11 @@
         </div>
       </div>
     </div>
-    <div class="relative bg-gray-900 border-t-2 border-gray-800 h-20">
+    <div class="relative bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 border-t-2 border-red-800 h-16">
       <div class="relative z-10 shadow">
         <div
-          class="mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
-          <div class="-mr-2 -my-2 md:hidden">
+          class="mx-auto flex justify-between items-center px-4 py-4 sm:px-6 sm:py-4 lg:px-6 md:justify-start md:space-x-10">
+          <div class="-mr-2 -my-1 md:hidden">
             <button
               @click="change_visibleMobileMenu"
               class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:text-gray-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-800"
@@ -82,7 +81,7 @@
           <div class="hidden md:flex-1 md:flex md:items-center justify-center">
             <nav class="ml-3 flex space-x-10">
               <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/"
                 @click.native="close_visible"
               >
@@ -92,7 +91,7 @@
               <div class="relative">
                 <!-- Item active: "text-gray-900", Item inactive: "text-gray-100" -->
                 <button
-                  class="mt-2 group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                  class=" group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                   type="button"
                   @click="change_visibleCatalog">
                   <span>Каталог</span>
@@ -110,7 +109,7 @@
                 </button>
               </div>
               <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/actions"
                 @click.native="close_visible"
               >
@@ -124,7 +123,7 @@
 <!--                Блог-->
 <!--              </NuxtLink>-->
               <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/about"
                 @click.native="close_visible"
               >
@@ -133,7 +132,7 @@
               <div class="relative">
                 <!-- Item active: "text-gray-900", Item inactive: "text-gray-100" -->
                 <button
-                  class="mt-2 group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                  class="group px-1 rounded-md text-gray-100 inline-flex items-center text-base font-medium hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                   type="button"
                   @click="change_visibleInformation">
                   <span>Информация</span>
@@ -151,14 +150,14 @@
                 </button>
               </div>
               <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 to="/contact"
                 @click.native="close_visible"
               >
                 Контакты
               </NuxtLink>
               <a
-                class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                class="text-base px-1 font-medium rounded-md text-gray-100 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
                 href="https://vk.com/orbita_stroy"
                 target="_blank">
                 Наш VK
