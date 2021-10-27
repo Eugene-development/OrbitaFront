@@ -10,8 +10,8 @@
       To: "opacity-0 scale-95"
   -->
 <!--  TODO Сделать стилизованность-->
-  <div v-if="visibleMobileMenu" class="absolute z-20 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+  <div v-if="visibleMobileMenu" class="mt-24 absolute z-20 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+    <div class="rounded-lg shadow-lg ring ring-black ring-opacity-10 bg-white divide-y-2 divide-gray-50">
       <div class="pt-5 pb-6 px-5 sm:pb-8">
         <div class="flex items-center justify-between">
           <div>
@@ -68,6 +68,7 @@
                 </svg>
               </button>
             </div>
+
             <NuxtLink
               class="text-base px-1 font-medium rounded-md text-gray-800 hover:text-red-800 focus:text-red-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
               to="/actions"
@@ -126,45 +127,45 @@
           </nav>
         </div>
       </div>
-      <div v-if="false" class="py-6 px-5 bg-gray-200">
-        <div class="grid grid-cols-2 gap-4">
-          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">
-            Pricing
-          </a>
+<!--      <div v-if="true" class="py-6 px-5 bg-gray-200">-->
+<!--        <div class="grid grid-cols-2 gap-4">-->
+<!--          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">-->
+<!--            Pricing-->
+<!--          </a>-->
 
-          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">
-            Docs
-          </a>
+<!--          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">-->
+<!--            Docs-->
+<!--          </a>-->
 
-          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">
-            Company
-          </a>
+<!--          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">-->
+<!--            Company-->
+<!--          </a>-->
 
-          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">
-            Resources
-          </a>
+<!--          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">-->
+<!--            Resources-->
+<!--          </a>-->
 
-          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">
-            Blog
-          </a>
+<!--          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">-->
+<!--            Blog-->
+<!--          </a>-->
 
-          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">
-            Contact Sales
-          </a>
-        </div>
-        <div class="mt-6">
-          <a class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-             href="#">
-            Sign up
-          </a>
-          <p class="mt-6 text-center text-base font-medium text-gray-400">
-            Existing customer?
-            <a class="text-indigo-600 hover:text-indigo-500" href="#">
-              Sign in
-            </a>
-          </p>
-        </div>
-      </div>
+<!--          <a class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700" href="#">-->
+<!--            Contact Sales-->
+<!--          </a>-->
+<!--        </div>-->
+<!--        <div class="mt-6">-->
+<!--          <a class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"-->
+<!--             href="#">-->
+<!--            Sign up-->
+<!--          </a>-->
+<!--          <p class="mt-6 text-center text-base font-medium text-gray-400">-->
+<!--            Existing customer?-->
+<!--            <a class="text-indigo-600 hover:text-indigo-500" href="#">-->
+<!--              Sign in-->
+<!--            </a>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
 
 

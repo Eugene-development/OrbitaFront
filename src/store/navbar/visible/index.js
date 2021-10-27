@@ -5,6 +5,13 @@ export const state = () => ({
 });
 
 export const actions = {
+  change_visibleMobileMenu({ commit, state }) {
+    const visibleMobileMenu = !state.visibleMobileMenu;
+    commit('VISIBLE_MOBILE_MENU', visibleMobileMenu);
+
+    const visibleCatalog = false;
+    commit('VISIBLE_CATALOG', visibleCatalog);
+  },
 
   change_visibleCatalog({ commit, state }) {
     const visibleCatalog = !state.visibleCatalog;
@@ -20,16 +27,15 @@ export const actions = {
     commit('VISIBLE_CATALOG', visibleCatalog);
   },
 
-  change_visibleMobileMenu({ commit, state }) {
-    const visibleMobileMenu = !state.visibleMobileMenu;
-    commit('VISIBLE_MOBILE_MENU', visibleMobileMenu);
-  },
 
   close_visible({ commit }) {
     const visibleCatalog = false;
     const visibleInformation = false;
     commit('VISIBLE_CATALOG', visibleCatalog);
     commit('VISIBLE_INFORMATION', visibleInformation);
+
+    const visibleMobileMenu = false;
+    commit('VISIBLE_MOBILE_MENU', visibleMobileMenu);
   },
 };
 
