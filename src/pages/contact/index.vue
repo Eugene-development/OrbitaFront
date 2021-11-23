@@ -92,7 +92,7 @@
               </div>
               <div class="ml-3 text-base ">
                 <p>
-                  orbita88yuliya@mail.ru (отдел продаж)
+                  orbita88yuliya@yandex.ru (отдел продаж)
                 </p>
               </div>
             </div>
