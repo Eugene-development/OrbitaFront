@@ -30,7 +30,7 @@
 <!--                stroke-linecap="round" stroke-linejoin="round"-->
 <!--                stroke-width="2"></path>-->
 <!--            </svg>-->
-            <strong>8 (920) 055-55-61</strong>
+            <strong>+7 (8313) 35-04-70</strong>
           </p>
           <p class="mt-6 pt-2 text-xl md:text-center text-gray-100 animate-pulse">При заказе стройматериалов через сайт для вас скидка 5%</p>
         </div>

@@ -27,7 +27,7 @@
               </div>
               <div class="ml-3 text-base">
                 <p>
-                  8 (920) 055-55-61
+                  +7 (8313) 35-04-70
                 </p>
               </div>
             </div>
@@ -239,7 +239,7 @@
                 <div class="font-medium text-lg leading-6 space-y-1">
                   <h3 class="text-white">Горбунова Ирина</h3>
                   <p class="text-indigo-400">менеджер</p>
-                  <p class="text-indigo-400">8-927-082-64-23</p>
+                  <p class="text-indigo-400">8-987-082-64-23</p>
                   <p class="text-indigo-400">orbitaira@yandex.ru</p>
                 </div>
               </div>
