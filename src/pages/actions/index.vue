@@ -25,7 +25,7 @@
           <!--              stroke-width="2"/>-->
           <!--          </svg>-->
           <p class="m-4 text-5xl font-bold text-red-900 animate-pulse">
-            8 (930) 688-88-62
+            8 (8313) 35-04-70
           </p>
         </div>
       </div>
