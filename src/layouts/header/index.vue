@@ -32,7 +32,7 @@
 <!--            </svg>-->
             <strong>+7 (8313) 35-04-70</strong>
           </p>
-          <p class="mt-6 pt-2 text-3xl md:text-center text-gray-100 ">или звоните на сотовый 8 (902) 303-36-54</p>
+          <p class="mt-6 pt-2 text-3xl md:text-center text-gray-100 ">или звоните на сотовый <br> 8 (902) 303-36-54</p>
           <p class="mt-6 pt-2 text-xl md:text-center text-gray-100 animate-pulse">При заказе стройматериалов через сайт для вас скидка 5%</p>
         </div>
 
