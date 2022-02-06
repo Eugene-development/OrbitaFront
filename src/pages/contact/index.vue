@@ -40,7 +40,7 @@
               </div>
               <div class="ml-3 text-base ">
                 <p>
-                  orbita1407@yandex.ru (отдел снабжения)
+                  info@orbita-stroy.com
                 </p>
               </div>
             </div>
@@ -92,7 +92,7 @@
               </div>
               <div class="ml-3 text-base ">
                 <p>
-                  orbita88yuliya@yandex.ru (отдел продаж)
+                  info@orbita-stroy.com
                 </p>
               </div>
             </div>
