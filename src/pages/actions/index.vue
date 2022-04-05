@@ -56,8 +56,8 @@
             <div class="relative">
               <div class="sm:text-center">
                 <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                  Клей Ветонит Изи Фикс 25 кг.
-                  <br>340 за мешок
+                  Шпаклевка финишная "Ветонит lr+"
+                  <br>860 за мешок
                 </h2>
 
                 <p class="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
